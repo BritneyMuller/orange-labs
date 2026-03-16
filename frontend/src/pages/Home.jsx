@@ -411,6 +411,275 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ====================================================
+          7. TESTIMONIALS
+          ==================================================== */}
+      <section className={styles.testimonialsSection}>
+        <div className={styles.testimonialsInner}>
+          <div className={styles.testimonialsIntro}>
+            <span className={styles.eyebrow}>200+ Members &amp; Growing</span>
+            <h2 className={styles.sectionHeadline}>Don't take our word for it</h2>
+            <p className={styles.sectionParagraph}>
+              Marketers at every level — from freelancers to directors — are
+              building real AI tools inside Orange Labs every week.
+            </p>
+          </div>
+
+          <div className={styles.testimonialsGrid}>
+            {[
+              {
+                initials: 'LH', bg: '#6366f1',
+                name: 'Luke H.', role: 'Head of Search',
+                quote: "I've tried every AI course out there. Orange Labs is the only one where I actually ship things. The hackathon format changed how I learn.",
+              },
+              {
+                initials: 'BD', bg: '#0ea5e9',
+                name: 'Bhushan D.', role: 'Digital Marketing Manager',
+                quote: "Within two weeks I had an AI content brief tool running in production. My team thinks I hired a developer. I just joined Orange Labs.",
+              },
+              {
+                initials: 'SM', bg: '#10b981',
+                name: 'Stefan M.', role: 'Senior SEO Manager',
+                quote: "The community alone is worth it. Real practitioners sharing what's working right now — not recycled LinkedIn takes about AI being the future.",
+              },
+              {
+                initials: 'EH', bg: '#f59e0b',
+                name: 'Elizabeth H.', role: 'Director of SEO',
+                quote: "Britney built this for people who are serious about using AI to do real work. It shows in every session, every resource, every interaction.",
+              },
+              {
+                initials: 'GR', bg: '#ec4899',
+                name: 'Glen R.', role: 'SEO Freelancer',
+                quote: "As a freelancer I can't afford to fall behind. Orange Labs keeps me ahead of my clients — and gives me tools I can bill for immediately.",
+              },
+              {
+                initials: 'MW', bg: '#e8500a',
+                name: 'Mike W.', role: 'Web & Strategy Director',
+                quote: "I was skeptical of AI communities after a few duds. This one is different. Less hype, more doing. My whole workflow has changed in 60 days.",
+              },
+            ].map((t) => (
+              <div key={t.name} className={styles.testimonialCard}>
+                <div className={styles.testimonialStars}>★★★★★</div>
+                <p className={styles.testimonialQuote}>"{t.quote}"</p>
+                <div className={styles.testimonialAuthor}>
+                  <Avatar initials={t.initials} bg={t.bg} className={styles.testimonialAvatar} />
+                  <div>
+                    <div className={styles.testimonialName}>{t.name}</div>
+                    <div className={styles.testimonialRole}>{t.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================
+          8. WHO IS BRITNEY
+          ==================================================== */}
+      <section className={styles.whoSection}>
+        <div className={styles.whoInner}>
+
+          <div className={styles.whoImageWrap}>
+            <div className={styles.whoImagePlaceholder}>
+              <Avatar initials="BM" bg="#E8500A" className={styles.whoImageAvatar} />
+            </div>
+            <div className={styles.whoImageOverlay}>
+              <div className={styles.whoOverlayName}>Britney Muller</div>
+              <div className={styles.whoOverlayTitle}>Founder, Orange Labs</div>
+            </div>
+          </div>
+
+          <div className={styles.whoRight}>
+            <span className={styles.eyebrow}>Your Instructor &amp; Community Leader</span>
+            <h2 className={`${styles.sectionHeadline} ${styles.sectionHeadlineLight}`}>
+              Learn from a practitioner, not a professor
+            </h2>
+            <p className={`${styles.sectionParagraph} ${styles.sectionParagraphLight}`}>
+              Britney Muller has spent over a decade at the intersection of
+              marketing, data, and emerging technology. She built and led SEO
+              at Moz, has spoken at BrightonSEO, and has been training AI models
+              long before "prompt engineering" was a job title. Orange Labs is
+              her way of sharing what actually works — with practitioners who
+              need to ship, not just learn.
+            </p>
+
+            <ul className={styles.whoCredentials}>
+              {[
+                'Certified Hugging Face machine learning practitioner',
+                'Former Head of SEO Content at Moz',
+                '10+ years applying ML & AI to real marketing problems',
+                'International speaker — BrightonSEO & beyond',
+              ].map((c) => (
+                <li key={c} className={styles.whoCredItem}>
+                  <span className={styles.whoCredCheck}>✓</span>
+                  {c}
+                </li>
+              ))}
+            </ul>
+
+            <div className={styles.whoLogos}>
+              {['Hugging Face', 'Moz', 'BrightonSEO', 'Semrush'].map((logo) => (
+                <span key={logo} className={styles.whoLogoPill}>{logo}</span>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ====================================================
+          9. UPSELLS
+          ==================================================== */}
+      <section className={styles.upsellsSection}>
+        <div className={styles.upsellsInner}>
+          <div className={styles.upsellsIntro}>
+            <span className={styles.eyebrow}>Need More Than the Community?</span>
+            <h2 className={styles.sectionHeadline}>Go deeper when you're ready</h2>
+            <p className={styles.sectionParagraph}>
+              The community is the foundation. When you're ready to accelerate
+              — or bring your whole team — we have a track for that.
+            </p>
+          </div>
+
+          <div className={styles.upsellCards}>
+
+            <div className={styles.upsellCard}>
+              <div className={styles.upsellCardTag}>Accelerator</div>
+              <div className={styles.upsellCardTitle}>Actionable AI Course</div>
+              <div className={styles.upsellCardPrice}>
+                <span className={styles.upsellPriceAmount}>$1,495</span>
+                <span className={styles.upsellPricePer}> / cohort</span>
+              </div>
+              <ul className={styles.upsellList}>
+                {[
+                  '8-week cohort with live weekly sessions',
+                  'Build 4 production-ready AI marketing tools',
+                  'Private cohort Slack channel + instructor access',
+                  'Lifetime access to course materials & recordings',
+                  'Certificate of completion + community badge',
+                ].map((item) => (
+                  <li key={item} className={styles.upsellListItem}>
+                    <span className={styles.upsellCheck}>✓</span>{item}
+                  </li>
+                ))}
+              </ul>
+              <div className={styles.upsellCohort}>
+                Next cohort: <strong>April 14, 2025</strong> — 6 spots left
+              </div>
+              <a href="#" className={styles.upsellCtaSolid}>Save My Seat →</a>
+            </div>
+
+            <div className={`${styles.upsellCard} ${styles.upsellCardDark}`}>
+              <div className={`${styles.upsellCardTag} ${styles.upsellCardTagLight}`}>For Teams</div>
+              <div className={`${styles.upsellCardTitle} ${styles.upsellCardTitleLight}`}>Enterprise Training</div>
+              <div className={styles.upsellCardPrice}>
+                <span className={`${styles.upsellPriceAmount} ${styles.upsellPriceAmountLight}`}>$39,900</span>
+                <span className={`${styles.upsellPricePer} ${styles.upsellPricePerLight}`}> / team engagement</span>
+              </div>
+              <ul className={styles.upsellList}>
+                {[
+                  'Custom workshop designed for your team & stack',
+                  'Up to 20 participants per engagement',
+                  'Private community channel for your organization',
+                  'Tailored curriculum + real deliverables your team ships',
+                  '90-day follow-up support & implementation review',
+                ].map((item) => (
+                  <li key={item} className={`${styles.upsellListItem} ${styles.upsellListItemLight}`}>
+                    <span className={styles.upsellCheckLight}>✓</span>{item}
+                  </li>
+                ))}
+              </ul>
+              <div className={`${styles.upsellCohort} ${styles.upsellCohortLight}`}>
+                Questions?{' '}
+                <a href="mailto:hello@orangelabs.co" className={styles.upsellEmailLink}>hello@orangelabs.co</a>
+              </div>
+              <a href="#" className={styles.upsellCtaOutline}>Apply Now — 2 Spots Left →</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================
+          10. FAQ
+          ==================================================== */}
+      <section className={styles.faqSection}>
+        <div className={styles.faqInner}>
+          <div className={styles.faqIntro}>
+            <span className={styles.eyebrow}>FAQ</span>
+            <h2 className={styles.sectionHeadline}>Common questions</h2>
+          </div>
+
+          <div className={styles.faqGrid}>
+            {[
+              {
+                q: "I'm not technical. Is this for me?",
+                a: "Absolutely. Orange Labs is built for marketers, not developers. Everything we teach uses no-code and low-code tools. If you can use Google Docs, you can build with AI here.",
+              },
+              {
+                q: 'Can I expense this?',
+                a: "Most members do. Orange Labs is professional development for your marketing career. At $49/month, it's easier to justify than most SaaS subscriptions — and you'll actually use it.",
+              },
+              {
+                q: 'What if I join the community and later want the course?',
+                a: 'Community members get priority access and a discounted rate on the next cohort. Your membership is a great way to try before you invest in the full accelerator.',
+              },
+              {
+                q: 'How is this different from other AI content?',
+                a: 'Most AI content is either too theoretical or too generic. Orange Labs is built around shipping real things — every session ends with something you can use or deploy. No fluff, no hype.',
+              },
+            ].map((item) => (
+              <div key={item.q} className={styles.faqItem}>
+                <div className={styles.faqQuestion}>{item.q}</div>
+                <p className={styles.faqAnswer}>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ====================================================
+          11. FINAL CTA
+          ==================================================== */}
+      <section className={styles.ctaSection}>
+        <div className={styles.ctaInner}>
+          <span className={styles.eyebrow}>Ready to build?</span>
+          <h2 className={styles.ctaHeadline}>
+            Join the lab.{' '}
+            <em className={styles.ctaHeadlineItalic}>Start building.</em>
+          </h2>
+          <p className={styles.ctaSub}>
+            200+ marketers already inside — shipping AI tools, sharing wins,
+            and staying ahead together.
+          </p>
+          <div className={styles.ctaButtons}>
+            <a href="#inside" className={styles.ctaBtnWhite}>
+              Join the Community — $49/mo →
+            </a>
+            <a href="#" className={styles.ctaBtnGhost}>Explore the Course</a>
+          </div>
+          <p className={styles.ctaGuarantee}>Cancel any time. No contracts. No risk.</p>
+        </div>
+      </section>
+
+      {/* ====================================================
+          12. FOOTER
+          ==================================================== */}
+      <footer className={styles.footer}>
+        <div className={styles.footerInner}>
+          <div className={styles.footerLogo}>
+            <span className={styles.navLogoDot}>●</span> orange labs
+          </div>
+          <p className={styles.footerCopy}>
+            © {new Date().getFullYear()} Orange Labs. All rights reserved.{' '}
+            <a href="mailto:hello@orangelabs.co" className={styles.footerLink}>
+              hello@orangelabs.co
+            </a>
+          </p>
+        </div>
+      </footer>
+
     </div>
   )
 }
