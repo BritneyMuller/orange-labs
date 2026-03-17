@@ -12,4 +12,4 @@ def static_files(path):
     return send_from_directory(app.static_folder, path)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
