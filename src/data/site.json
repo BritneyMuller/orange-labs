@@ -1,0 +1,57 @@
+{
+  "name": "Orange Labs",
+  "tagline": "The community for marketers who build with AI",
+  "url": "https://orangelabs.co",
+  "communityUrl": "https://community.orangelabs.co",
+  "substackUrl": "https://britneymuller.substack.com",
+  "memberCount": "375+",
+  "nav": [
+    { "label": "Community", "href": "/community" },
+    { "label": "Guide", "href": "/guide" },
+    { "label": "Projects", "href": "/projects" },
+    { "label": "Newsletter", "href": "/newsletter" },
+    { "label": "Pricing", "href": "/pricing" }
+  ],
+  "ticker": [
+    "Exp.048 · spun up",
+    "New members joining daily",
+    "Steal this · Chrome extension build",
+    "Hackathon · unstuck in 90 minutes",
+    "Workshop · time-series forecasting for marketers",
+    "Office hours · bring your broken workflow",
+    "Steal this · SEO reporting tool",
+    "New win posted · shipped before lunch",
+    "375+ builders inside",
+    "Exp.049 · in progress"
+  ],
+  "footer": {
+    "blurb": "The community for marketers who build with AI. This site is open source and built in the open, just like the lab.",
+    "columns": [
+      {
+        "heading": "Explore",
+        "links": [
+          { "label": "Community", "href": "/community" },
+          { "label": "The Guide", "href": "/guide" },
+          { "label": "Projects", "href": "/projects" },
+          { "label": "Pricing", "href": "/pricing" }
+        ]
+      },
+      {
+        "heading": "Community",
+        "links": [
+          { "label": "Join the Lab", "href": "https://community.orangelabs.co" },
+          { "label": "Log in", "href": "https://community.orangelabs.co" },
+          { "label": "Submit a project", "href": "/projects" }
+        ]
+      },
+      {
+        "heading": "Elsewhere",
+        "links": [
+          { "label": "Newsletter", "href": "/newsletter" },
+          { "label": "GitHub", "href": "https://github.com/BritneyMuller" },
+          { "label": "Contact", "href": "mailto:hello@orangelabs.co" }
+        ]
+      }
+    ]
+  }
+}

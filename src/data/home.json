@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "title": "Orange Labs — The Community for Marketers Who Build With AI",
+    "description": "Stop talking about AI. Start building with it. Orange Labs is where 375+ marketers build real AI skills through hands-on experiments, expert guidance, and a clear signal through the noise."
+  },
+  "hero": {
+    "statusPill": "Open enrollment · new members daily",
+    "headlineWords": ["The", "community", "for", "marketers", "who", "*build*", "with", "AI"],
+    "lede": "Real AI skills through hands-on experiments, expert guidance, and a clear signal through the noise. No hype, just shipping.",
+    "primaryCta": { "label": "Join the Community →", "href": "/community" },
+    "primaryNote": "$49/mo · 7 days risk-free · cancel any time",
+    "secondaryCta": { "label": "AI Guide", "href": "/guide" },
+    "photoLabel": "[ Photo · community meetup ]",
+    "expCard": {
+      "tag": "Exp.047 · Shipped",
+      "line": "SEO reporting tool, built on a Sunday afternoon",
+      "who": "Martin C. · no programming background"
+    }
+  },
+  "whatIs": {
+    "eyebrow": "What is Orange Labs?",
+    "heading": "Stop talking about AI. Start building with it.",
+    "body": "Orange Labs is where marketers stop watching tutorials and start shipping real AI tools. Every feature is built around doing, with community, guidance, and accountability to keep you moving.",
+    "checks": [
+      "Share wins, get feedback, and never build alone",
+      "Connect with marketers actively building with AI",
+      "Learn live: workshops, hackathons, and expert sessions"
+    ],
+    "photoLabel": "[ Photo · live workshop ]"
+  },
+  "problem": {
+    "eyebrow": "Exp.01 · The problem",
+    "heading": "Why most marketers are AI stuck",
+    "cards": [
+      {
+        "chip": "The trap",
+        "title": "Generic learning",
+        "body": "You've watched the YouTube videos, read the LinkedIn posts, even taken a course or two. But you still don't have a single AI tool in production.",
+        "answer": "We give you actionable workflows you can ship tomorrow morning."
+      },
+      {
+        "chip": "The struggle",
+        "title": "Building in isolation",
+        "body": "AI moves fast and most of your peers are in the same boat. Figuring it out alone means slow progress and a lot of wasted time.",
+        "answer": "Experience a community of builders who share what works, what doesn't, and what's next."
+      },
+      {
+        "chip": "The barrier",
+        "title": "The \"technical\" gap",
+        "body": "Most training is either \"too basic\" (surface-level prompting) or \"too hard\" (complex engineering). Neither helps you do your actual job better.",
+        "answer": "We bridge the gap: powerful AI tools explained in plain marketing language."
+      }
+    ]
+  },
+  "steps": {
+    "eyebrow": "The protocol · How it works",
+    "heading": "Your first week in the lab",
+    "items": [
+      {
+        "title": "Join and introduce yourself",
+        "html": "Tell 375+ builders who you are and what you want to build. <strong>You'll get replies the same day.</strong>"
+      },
+      {
+        "title": "Pick your first experiment",
+        "html": "Grab a proven prompt or workflow from the Steal This library, or bring the half-built idea sitting in your drafts."
+      },
+      {
+        "title": "Ship it at the next hackathon",
+        "html": "Get unstuck live with the group, then post your win. <strong>That's the whole culture.</strong>"
+      }
+    ]
+  },
+  "features": {
+    "eyebrow": "Inside Orange Labs",
+    "heading": "Everything you need to build",
+    "cards": [
+      {
+        "icon": "flask",
+        "num": "Lab.01",
+        "title": "Hackathon sessions",
+        "html": "Stop struggling alone. Bring your unfinished AI projects and get unstuck in real-time. <strong>What takes weeks to solve solo, we solve together in 90 minutes.</strong>"
+      },
+      {
+        "icon": "terminal",
+        "num": "Lab.02",
+        "title": "Hands-on AI implementation",
+        "html": "We don't do passive webinars. These are working sessions where you open your laptop, follow along, and <strong>leave with a finished asset, not just more notes.</strong>"
+      },
+      {
+        "icon": "network",
+        "num": "Lab.03",
+        "title": "A network of AI builders",
+        "html": "Trade ideas with marketers who are actually using AI, not just talking about it. <strong>A safe space to share failures, experiments, and wins</strong> without judgment."
+      },
+      {
+        "icon": "library",
+        "num": "Lab.04",
+        "title": "The \"Steal This\" library",
+        "html": "Don't start from scratch. A curated vault of battle-tested prompts, Python scripts, and workflows you can <strong>copy/paste directly into your marketing operations.</strong>"
+      }
+    ]
+  },
+  "origin": {
+    "eyebrow": "The origin story",
+    "heading": "Built by demand. Not a business plan.",
+    "stars": "★★★★★ 4.8/5 by 330+ students",
+    "lede": "Graduates of the top-rated Actionable AI course kept asking for:",
+    "checks": [
+      "A place to stay current on new tools and models",
+      "Somewhere to troubleshoot together",
+      "A space to share AI wins with people who get it",
+      "Working demos that don't require reading technical docs"
+    ],
+    "cta": { "label": "Join the Community →", "href": "/community" },
+    "photoLabel": "[ Photo · the lab bench ]"
+  },
+  "results": {
+    "eyebrow": "Exp.047 · Real results",
+    "heading": "Members ship real tools",
+    "quote": "\"It gives me entities as well, entities that are similar. I built an SEO reporting tool on a Sunday afternoon.\"",
+    "who": "Martin Canchola",
+    "whoDetail": "Apartment SEO Co-Founder · no programming background",
+    "videoLabel": "[ Video · member demo ]"
+  },
+  "pricing": {
+    "eyebrow": "Need more than the community?",
+    "heading": "Go deeper when you're ready",
+    "tiers": [
+      {
+        "name": "The Community",
+        "price": "$49",
+        "per": "/mo",
+        "risk": "Try 7 days risk-free",
+        "best": "marketers who need ongoing support and a safe space to experiment.",
+        "includes": [
+          "Safe lab environment with peer support",
+          "Real-time help from AI experts",
+          "Weekly hands-on live workshops",
+          "Resource library: templates and prompts",
+          "Curated AI news, minus the hype"
+        ],
+        "cta": { "label": "Join the Community", "href": "/community" },
+        "hot": false
+      },
+      {
+        "name": "The Accelerator",
+        "price": "$1,495",
+        "per": "",
+        "risk": "Try 14 days risk-free",
+        "best": "marketers who need to up-skill and ship a specific AI solution ASAP.",
+        "includes": [
+          "8 live sessions with AI expert guests",
+          "Build a real project in 4 weeks",
+          "Small cohort and LinkedIn certificate",
+          "Lifetime access, all future updates",
+          "1 year of Community included ($588 value)"
+        ],
+        "cta": { "label": "Start building", "href": "/pricing" },
+        "hot": true
+      },
+      {
+        "name": "Enterprise AI Training",
+        "price": "$39,900",
+        "per": "",
+        "risk": "One-time investment",
+        "best": "teams and agencies building an AI-first culture.",
+        "includes": [
+          "8 private, customized live sessions",
+          "AI workflows for your goals and tasks",
+          "Project-based implementation",
+          "Team access to Orange Labs for 1 year"
+        ],
+        "cta": { "label": "Apply now", "href": "/pricing" },
+        "hot": false
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Field notes · FAQ",
+    "heading": "Questions marketers ask",
+    "items": [
+      {
+        "q": "I'm not technical. Will I keep up?",
+        "a": "Orange Labs exists because most AI training is either too basic or too technical. Everything here is explained in plain marketing language, and members with zero programming background ship real tools. Martin built an SEO reporting tool on a Sunday afternoon."
+      },
+      {
+        "q": "How much time does this take?",
+        "a": "Most members start with one 90-minute session a week and the Steal This library between sessions. Sessions are working time, not homework: you leave with a finished asset."
+      },
+      {
+        "q": "Is this just another course?",
+        "a": "No. Courses give you notes. The Lab gives you reps: live hackathons, feedback on your actual work, and a community that expects you to ship. The Accelerator course is there when you want to go deeper."
+      },
+      {
+        "q": "What if it's not for me?",
+        "a": "Try it for 7 days risk-free and cancel any time. No waitlist, no lock-in, no hard feelings."
+      }
+    ]
+  },
+  "band": {
+    "heading": "Let's fail fast, start messy & succeed together",
+    "sub": "Upskill with 375+ other Marketers today",
+    "cta": { "label": "Join the Lab →", "href": "/community" },
+    "note": "$49/mo · 7 days risk-free · cancel any time"
+  }
+}
