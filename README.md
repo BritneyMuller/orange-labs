@@ -4,15 +4,30 @@ The marketing and education site for [Orange Labs](https://orangelabs.co), the c
 
 The community itself lives at community.orangelabs.co on Circle. This repo powers the root domain only.
 
-## What's here
+## Why this repo is public
 
-- **Astro** static site with React islands for interactive pieces
-- **Tailwind CSS** with the Orange Labs design tokens (Solar Ember, Iron, Midnight Tide, Sandstone, Silver Haze, Bone White)
-- Page copy lives in `src/data/*.json` so non-developers can edit words without touching components
-- A signaly-inspired motion system in `src/scripts/motion.js` (pure CSS + one IntersectionObserver, respects reduced motion)
-- **Exp.000**: an ambient beaker game hidden in the footer (`src/scripts/labgame.js`). Click the flask. Type `ship` if you're in a hurry.
+Orange Labs teaches marketers to build things. It would be strange to hide how our own site is built. Fork it, study it, steal the patterns — that's the point. If you ship something with it, we'd love to hear about it.
 
-## Working on the site
+## Architecture (the short version)
+
+| Layer | Choice | Why |
+| --- | --- | --- |
+| Framework | [Astro](https://astro.build) static output | Pages ship as plain HTML: fast LCP, perfect for SEO and AI crawlers. No server to maintain. |
+| Interactivity | React islands | Interactive pieces hydrate individually; everything else stays zero-JS. |
+| Styling | Tailwind CSS v4 | Brand tokens live in one `@theme` block in `src/styles/global.css`. |
+| Copy | JSON in `src/data/` | Words are editable without touching components. The member count lives in exactly one place. |
+| Fonts | Fontsource (self-hosted) | No font CDN requests, no layout shift surprises. |
+| Motion | ~40 lines of CSS + one IntersectionObserver | One easing curve, opacity/transform only, respects `prefers-reduced-motion`. |
+| Fun | `src/scripts/labgame.js` | An ambient experiment hidden in the footer. Click the flask. Type `ship` if you're in a hurry. |
+
+## Make it yours
+
+1. **Tokens** — swap the palette and fonts in the `@theme` block of `src/styles/global.css`. The whole site reskins.
+2. **Words** — edit `src/data/home.json` (homepage copy) and `src/data/site.json` (nav, footer, ticker, facts).
+3. **Logos** — replace the files in `public/logos/` and `brand/`.
+4. **Deploy** — it's a static build (`npm run build` → `dist/`), so any static host works.
+
+## Development
 
 ```sh
 npm install
@@ -22,9 +37,20 @@ npm run build    # must pass before anything merges
 
 Branch per change, PR to `main`. Previews deploy per PR; `main` deploys to production.
 
-## Editing content
+## What you won't find here (on purpose)
 
-Most words on the homepage live in `src/data/home.json`. Site-wide facts (member count, nav, footer links, ticker entries) live in `src/data/site.json`. The member count lives in exactly one place: `site.json` → `memberCount`.
+Open source doesn't mean oversharing. This repo deliberately excludes:
+
+- Member data of any kind — ticker names are fictional until members opt in to being featured
+- Secrets, API keys, analytics tokens
+- Internal planning documents and business strategy
+- Infrastructure details beyond what the code itself requires
+
+If you fork this pattern, we recommend the same discipline: keep the code public and the operations private.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) — written for marketers, not just engineers.
 
 ## License
 

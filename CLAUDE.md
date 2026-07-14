@@ -4,7 +4,7 @@ Open-source marketing + education site for Orange Labs, the community for market
 
 ## Hard rules
 
-- NEVER touch, suggest changing, or generate config affecting the `community.orangelabs.co` DNS record or anything Circle-related. The community must never go down because of this repo.
+- NEVER touch, suggest changing, or generate anything affecting `community.orangelabs.co` or the Circle platform. The community is separate infrastructure, managed outside this repo, and must never go down because of work here.
 - This repo is PUBLIC. Never commit secrets, API keys, member data, or private business info.
 - All copy edits must preserve Britney's voice: confident, warm, plain-language, anti-hype. No corporate jargon, no "genuinely/honestly", no em-dashes.
 - Content must stay editable by non-technical helpers: page copy and structured content live in markdown/content collections, not hardcoded in components.
@@ -42,7 +42,7 @@ Aesthetic direction: dark, modern, signaly.co-inspired — Iron/Midnight Tide ca
 
 - 375+ members (update this number when Britney says so; it lives in ONE place in content config, never hardcoded in multiple files)
 - Tiers: Community $49/mo (7-day risk-free), Accelerator course $1,495 (14-day risk-free), Enterprise AI Training $39,900
-- Existing homepage copy inventory is in docs/plan.md — reuse it; it's proven. Rebuild = re-platform + redesign, not a copy rewrite.
+- The homepage copy is proven messaging; treat changes as re-platforming, not rewriting. Detailed planning docs live outside this public repo.
 - Community CTA: "Join the Community" → community landing page → Circle join flow
 
 ## SEO requirements (SEO matters)
