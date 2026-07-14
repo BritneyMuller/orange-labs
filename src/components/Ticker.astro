@@ -1,0 +1,18 @@
+---
+import site from '../data/site.json';
+// Items are doubled so the marquee loops seamlessly at translateX(-50%).
+const items = [...site.ticker, ...site.ticker];
+---
+
+<div class="ticker" aria-hidden="true">
+  <div class="tk">
+    {
+      items.map((item) => (
+        <>
+          <span>{item}</span>
+          <span class="sep">///</span>
+        </>
+      ))
+    }
+  </div>
+</div>

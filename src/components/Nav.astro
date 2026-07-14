@@ -1,0 +1,16 @@
+---
+import site from '../data/site.json';
+---
+
+<nav class="site">
+  <div class="wrap navin">
+    <a href="/"><img class="logo" src="/logos/orange-labs.png" alt="Orange Labs" width="720" height="131" /></a>
+    <div class="navlinks">
+      {site.nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </div>
+    <div class="navcta">
+      <a class="login" href={site.communityUrl}>Log in</a>
+      <a class="btn btn-ember" href={site.communityUrl}>Join the Lab</a>
+    </div>
+  </div>
+</nav>

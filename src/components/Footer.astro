@@ -1,0 +1,35 @@
+---
+import site from '../data/site.json';
+const year = new Date().getFullYear();
+---
+
+<footer class="site">
+  <canvas id="lgcv" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <img class="logo" src="/logos/orange-labs.png" alt="Orange Labs" width="720" height="131" />
+        <p class="blurb">{site.footer.blurb}</p>
+      </div>
+      {
+        site.footer.columns.map((col) => (
+          <div class="fcol">
+            <h4>{col.heading}</h4>
+            {col.links.map((link) => (
+              <a href={link.href}>{link.label}</a>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+    <div class="fbottom">
+      <span>© {year} Orange Labs</span>
+      <span id="lgwins" hidden></span>
+      <span>orangelabs.co</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  import '../scripts/labgame.js';
+</script>

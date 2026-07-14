@@ -1,0 +1,245 @@
+@import "tailwindcss";
+
+/* ============ Orange Labs design tokens ============ */
+@theme {
+  --color-ember: #F15722;
+  --color-iron: #2B2E33;
+  --color-iron-deep: #22252A;
+  --color-iron-card: #33373D;
+  --color-midnight: #1C3A5E;
+  --color-midnight-deep: #16304F;
+  --color-sandstone: #E8E2DA;
+  --color-sandstone-card: #F1EDE7;
+  --color-haze: #B4B6BA;
+  --color-bone: #F9F9F8;
+  --font-display: "Rajdhani", system-ui, sans-serif;
+  --font-body: "Poppins", system-ui, sans-serif;
+}
+
+:root {
+  --ember: #F15722;
+  --iron: #2B2E33;
+  --iron-deep: #22252A;
+  --iron-card: #33373D;
+  --midnight: #1C3A5E;
+  --midnight-deep: #16304F;
+  --sandstone: #E8E2DA;
+  --sandstone-card: #F1EDE7;
+  --haze: #B4B6BA;
+  --bone: #F9F9F8;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  --display: "Rajdhani", system-ui, sans-serif;
+  --body: "Poppins", system-ui, sans-serif;
+  --ease: cubic-bezier(.25, .46, .45, .94); /* the house easing curve */
+}
+
+html { scroll-behavior: smooth }
+body { margin: 0; font-family: var(--body); font-weight: 400; background: var(--iron); color: var(--bone); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden }
+img { max-width: 100%; display: block }
+a { color: inherit; text-decoration: none }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px }
+
+/* Type */
+h1, h2, h3 { font-family: var(--display); font-weight: 700; line-height: .98; text-transform: uppercase; letter-spacing: .005em; margin: 0; text-wrap: balance }
+h1 { font-size: clamp(3rem, 7.2vw, 5.4rem) }
+h2 { font-size: clamp(2.1rem, 4.4vw, 3.3rem) }
+.eyebrow { font-family: var(--mono); font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--ember); display: flex; align-items: center; gap: .75em; margin-bottom: 1.1rem }
+.eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--ember); flex: none }
+.lede { color: var(--haze); font-size: 1.06rem; max-width: 34em }
+.on-light .lede { color: #5b5e63 }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: .5em; font-family: var(--body); font-weight: 600; font-size: .95rem; padding: .85em 1.7em; border-radius: 8px; transition: transform .2s var(--ease), box-shadow .2s var(--ease) }
+.btn:hover { transform: translateY(-2px) }
+.btn-ember { background: var(--ember); color: var(--bone); box-shadow: 0 6px 24px rgba(241, 87, 34, .28) }
+.btn-ember:hover { box-shadow: 0 10px 32px rgba(241, 87, 34, .4) }
+.btn-ghost { border: 1px solid rgba(249, 249, 248, .28); color: var(--bone) }
+.btn-iron { background: var(--iron); color: var(--bone) }
+.on-light .btn-ghost { border-color: rgba(43, 46, 51, .3); color: var(--iron) }
+
+/* ============ Lab motifs ============ */
+.dotgrid { background-image: radial-gradient(rgba(249, 249, 248, .07) 1px, transparent 1px); background-size: 26px 26px }
+/* dotted grid paper for cream sections: fine dots + faint rule every 5 cells */
+.on-light { background-color: var(--sandstone); background-image: radial-gradient(rgba(43, 46, 51, .14) 1px, transparent 1px), linear-gradient(rgba(43, 46, 51, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(43, 46, 51, .05) 1px, transparent 1px); background-size: 18px 18px, 90px 90px, 90px 90px; color: var(--iron) }
+.ticks { position: relative }
+.ticks::before, .ticks::after { content: "+"; position: absolute; font-family: var(--mono); font-size: .8rem; color: var(--ember); opacity: .7 }
+.ticks::before { top: 10px; left: 12px }
+.ticks::after { bottom: 8px; right: 12px }
+.status { display: inline-flex; align-items: center; gap: .6em; font-family: var(--mono); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; border: 1px solid rgba(249, 249, 248, .18); border-radius: 999px; padding: .5em 1.1em; color: var(--haze) }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 0 rgba(74, 222, 128, .5); animation: pulse 2.2s infinite }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, .45) } 70% { box-shadow: 0 0 0 9px rgba(74, 222, 128, 0) } 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0) } }
+
+/* Photo placeholders (until real photos land) */
+.ph { border: 1.5px dashed rgba(249, 249, 248, .25); border-radius: 14px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; min-height: 300px; font-family: var(--mono); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--haze); background-image: radial-gradient(rgba(249, 249, 248, .06) 1px, transparent 1px); background-size: 20px 20px }
+.on-light .ph { border-color: rgba(43, 46, 51, .28); color: #7a7d82; background-image: radial-gradient(rgba(43, 46, 51, .09) 1px, transparent 1px) }
+
+/* ============ Motion system ============ */
+.js .wd { display: inline-block; opacity: 0; filter: blur(10px); transform: translateY(.35em); animation: wordReveal .6s var(--ease) forwards; animation-delay: calc(var(--i) * .07s + .15s) }
+@keyframes wordReveal { to { opacity: 1; filter: blur(0); transform: translateY(0) } }
+.js .rise { opacity: 0; transform: translateY(24px); animation: fadeUp .7s var(--ease) forwards; animation-delay: var(--d, .7s) }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0) } }
+.js .rv { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: calc(var(--i, 0) * .09s) }
+.js .rv.in { opacity: 1; transform: translateY(0) }
+h1 em { font-style: normal; color: var(--ember); position: relative; white-space: nowrap }
+h1 em::after { content: ""; position: absolute; left: 0; right: 0; bottom: .16em; height: .08em; background: var(--ember); opacity: .55; border-radius: 2px; transform: scaleX(1); transform-origin: left }
+.js h1 em::after { transform: scaleX(0); animation: drawLine .5s var(--ease) forwards; animation-delay: .95s }
+@keyframes drawLine { to { transform: scaleX(1) } }
+.orb { position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(241, 87, 34, .16), transparent 65%); top: -140px; right: -80px; pointer-events: none; animation: orbBreathe 11s var(--ease) infinite }
+@keyframes orbBreathe { 0%, 100% { opacity: .55; transform: translate(0, 0) scale(1) } 50% { opacity: .85; transform: translate(-18px, 14px) scale(1.06) } }
+.js .expcard { animation: bob 6s ease-in-out infinite }
+@keyframes bob { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
+.pcard, .fcard, .tier, .quotecard { transition: transform .2s var(--ease), box-shadow .2s var(--ease) }
+.pcard:hover, .fcard:hover, .tier:hover { transform: translateY(-4px) }
+.fcard:hover { box-shadow: 0 16px 40px rgba(0, 0, 0, .35) }
+.pcard:hover, .tier:hover { box-shadow: 0 16px 36px rgba(22, 32, 47, .25) }
+
+/* lab log ticker */
+.ticker { background: var(--iron-deep); border-top: 1px solid rgba(249, 249, 248, .08); border-bottom: 1px solid rgba(249, 249, 248, .08); overflow: hidden; padding: .85rem 0; position: relative }
+.ticker .tk { display: flex; gap: 2.5rem; width: max-content; font-family: var(--mono); font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--haze); white-space: nowrap }
+.js .ticker .tk { animation: tick 95s linear infinite }
+.ticker:hover .tk { animation-play-state: paused }
+@keyframes tick { to { transform: translateX(-50%) } }
+.tk .sep { color: var(--ember) }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .wd, .js .rise, .js .rv { opacity: 1; filter: none; transform: none; animation: none; transition: none }
+  .js h1 em::after { transform: scaleX(1); animation: none }
+  .dot, .orb, .js .expcard, .js .ticker .tk { animation: none }
+  .btn, .pcard, .fcard, .tier { transition: none }
+  .btn:hover, .pcard:hover, .fcard:hover, .tier:hover { transform: none }
+}
+
+/* ============ Nav ============ */
+nav.site { position: sticky; top: 0; z-index: 50; background: rgba(34, 37, 42, .92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(249, 249, 248, .08) }
+.navin { display: flex; align-items: center; justify-content: space-between; height: 70px }
+.navlinks { display: flex; gap: 2rem; font-size: .9rem; font-weight: 500; color: var(--haze) }
+.navlinks a { position: relative }
+.navlinks a::after { content: ""; position: absolute; left: 0; bottom: -4px; height: 1.5px; width: 100%; background: var(--ember); transform: scaleX(0); transform-origin: left; transition: transform .2s var(--ease) }
+.navlinks a:hover { color: var(--bone) }
+.navlinks a:hover::after { transform: scaleX(1) }
+nav.site .logo { height: 34px; width: auto }
+.navcta { display: flex; gap: .9rem; align-items: center }
+.navcta .login { font-size: .9rem; font-weight: 500; color: var(--haze) }
+.navcta .btn { padding: .6em 1.3em; font-size: .88rem }
+@media (max-width: 860px) { .navlinks { display: none } }
+
+/* ============ Hero ============ */
+.hero { background: var(--iron-deep); padding: 3rem 0 4.5rem; position: relative; overflow: hidden }
+.hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 4rem; align-items: center; position: relative }
+.hero .lede { margin: 1.4rem 0 2rem }
+.heroctas { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-start; margin-bottom: 2.4rem }
+.ctanote { margin: .6rem 0 0; font-family: var(--mono); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--haze) }
+.band .ctanote { color: rgba(249, 249, 248, .85); margin-top: 1.3rem }
+.proof { display: flex; align-items: center; gap: 1rem }
+.avatars { display: flex }
+.avatars span { width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--iron-deep); margin-left: -10px; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: .8rem; color: var(--bone) }
+.avatars span:first-child { margin-left: 0 }
+.proof p { margin: 0; font-size: .85rem; color: var(--haze) }
+.proof strong { color: var(--bone); font-variant-numeric: tabular-nums }
+.bench { position: relative }
+.bench .ph { min-height: 380px }
+.expcard { position: absolute; bottom: -24px; left: -28px; background: var(--iron-card); border: 1px solid rgba(249, 249, 248, .12); border-radius: 12px; padding: 1rem 1.2rem; box-shadow: 0 18px 44px rgba(0, 0, 0, .4); max-width: 270px }
+.expcard .tag { font-family: var(--mono); font-size: .66rem; letter-spacing: .2em; color: var(--ember); text-transform: uppercase; margin-bottom: .35rem; display: flex; align-items: center; gap: .6em }
+.expcard .tag .dot { width: 6px; height: 6px }
+.expcard p { margin: 0; font-size: .84rem; line-height: 1.45 }
+.expcard .who { color: var(--haze); font-size: .76rem; margin-top: .3rem }
+@media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr } .bench { display: none } }
+
+/* ============ Sections ============ */
+section { padding: 5.5rem 0 }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr } }
+.on-light .eyebrow { color: #c8461a }
+.midnight { background: var(--midnight) }
+.checks { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: .7rem }
+.checks li { display: flex; gap: .7em; font-size: .95rem }
+.checks li::before { content: "→"; color: var(--ember); font-weight: 600; flex: none }
+.centerhead { text-align: center; max-width: 52rem; margin: 0 auto 3.2rem }
+.centerhead .eyebrow { justify-content: center }
+.centerhead .eyebrow::after { content: ""; width: 26px; height: 1px; background: var(--ember); flex: none }
+
+/* Problem cards */
+.cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem }
+@media (max-width: 860px) { .cards3 { grid-template-columns: 1fr } }
+.pcard { background: var(--sandstone-card); color: var(--iron); border-radius: 14px; padding: 2rem 1.8rem }
+.pcard .chip { display: inline-block; font-family: var(--mono); font-size: .66rem; letter-spacing: .16em; text-transform: uppercase; border: 1px solid rgba(43, 46, 51, .25); border-radius: 999px; padding: .35em .9em; margin-bottom: 1rem; color: #8a5b2d }
+.pcard h3 { font-size: 1.45rem; margin-bottom: .6rem }
+.pcard p { margin: .4rem 0; font-size: .9rem; color: #5b5e63 }
+.pcard p.answer { color: var(--iron); font-weight: 600; margin-top: 1.1rem }
+
+/* Protocol steps */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem }
+@media (max-width: 860px) { .steps { grid-template-columns: 1fr } }
+.step { background: var(--sandstone-card); border: 1px solid rgba(43, 46, 51, .12); border-radius: 14px; padding: 2rem 1.8rem; position: relative }
+.step .snum { font-family: var(--mono); font-size: .7rem; letter-spacing: .2em; color: #c8461a; display: flex; align-items: center; gap: .7em; margin-bottom: 1rem }
+.step .snum::after { content: ""; height: 1px; background: rgba(200, 70, 26, .4); flex: 1 }
+.step h3 { font-size: 1.35rem; margin-bottom: .5rem }
+.step p { margin: 0; font-size: .9rem; color: #5b5e63 }
+.step p strong { color: var(--iron) }
+
+/* Feature cards */
+.cards4 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem }
+@media (max-width: 760px) { .cards4 { grid-template-columns: 1fr } }
+.fcard { background: var(--iron-card); border: 1px solid rgba(249, 249, 248, .09); border-radius: 14px; padding: 2.1rem 2rem; position: relative }
+.fcard .num { font-family: var(--mono); font-size: .68rem; letter-spacing: .2em; color: var(--haze); opacity: .85 }
+.fcard h3 { color: var(--ember); font-size: 1.5rem; margin: .7rem 0 .55rem }
+.fcard p { margin: 0; font-size: .9rem; color: var(--haze) }
+.ficon { width: 44px; height: 44px; border: 1px solid rgba(241, 87, 34, .45); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--ember); margin-bottom: 1.1rem; background: rgba(241, 87, 34, .07) }
+.ficon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round }
+
+/* Origin */
+.stars { font-size: .85rem; color: #8a5b2d; font-family: var(--mono); letter-spacing: .06em; margin: 1rem 0 .4rem }
+
+/* Results */
+.quotecard { background: var(--midnight-deep); border: 1px solid rgba(249, 249, 248, .1); border-radius: 16px; padding: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center }
+@media (max-width: 860px) { .quotecard { grid-template-columns: 1fr } }
+.quotecard blockquote { margin: 0; font-size: 1.15rem; line-height: 1.55; font-weight: 500 }
+.quotecard .who { margin-top: 1.2rem; font-size: .85rem; color: var(--haze) }
+.quotecard .who strong { color: var(--bone) }
+
+/* Pricing */
+.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; align-items: start }
+@media (max-width: 900px) { .tiers { grid-template-columns: 1fr } }
+.tier { background: var(--sandstone-card); color: var(--iron); border-radius: 14px; padding: 2.2rem 1.9rem; position: relative }
+.tier.hot { outline: 2px solid var(--ember); outline-offset: -2px }
+.tier .pop { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--ember); color: var(--bone); font-family: var(--mono); font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; padding: .4em 1em; border-radius: 999px }
+.tier h3 { font-size: 1.25rem }
+.tier .price { font-family: var(--display); font-weight: 700; font-size: 2.6rem; line-height: 1; margin: .7rem 0 .3rem; font-variant-numeric: tabular-nums }
+.tier .price small { font-size: 1.1rem; color: #5b5e63; font-family: var(--body); font-weight: 500 }
+.tier .risk { display: inline-block; font-family: var(--mono); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; border: 1px solid rgba(43, 46, 51, .25); border-radius: 999px; padding: .35em .9em; margin: .4rem 0 1rem; color: #5b5e63 }
+.tier .best { font-size: .85rem; color: #5b5e63; margin: 0 0 1.2rem }
+.tier .best strong { color: var(--iron) }
+.tier ul { list-style: none; padding: 0; margin: 0 0 1.6rem; display: grid; gap: .55rem }
+.tier ul li { display: flex; gap: .6em; font-size: .84rem; color: #44474c }
+.tier ul li::before { content: "✓"; color: var(--ember); font-weight: 700; flex: none }
+.tier .btn { width: 100%; justify-content: center }
+
+/* FAQ */
+.faq { max-width: 52rem; margin: 0 auto }
+.faq details { border-bottom: 1px solid rgba(249, 249, 248, .14) }
+.faq summary { cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: 1.1em; padding: 1.3rem .2rem; font-family: var(--display); font-weight: 700; font-size: 1.25rem; text-transform: uppercase; letter-spacing: .01em }
+.faq summary::-webkit-details-marker { display: none }
+.faq summary .qn { font-family: var(--mono); font-size: .7rem; letter-spacing: .18em; color: var(--ember); flex: none }
+.faq summary::after { content: "+"; margin-left: auto; font-family: var(--mono); color: var(--ember); font-size: 1rem; transition: transform .2s var(--ease) }
+.faq details[open] summary::after { transform: rotate(45deg) }
+.faq details p { margin: 0 0 1.4rem; padding-left: calc(.7rem + 2.4em); font-size: .93rem; color: var(--haze); max-width: 44em }
+.faq summary:focus-visible { outline: 2px solid var(--ember); outline-offset: 2px; border-radius: 4px }
+
+/* CTA band — burnt ember, softer on the eyes than raw Solar Ember */
+.band { background: radial-gradient(rgba(249, 249, 248, .05) 1px, transparent 1px) 0 0/26px 26px, linear-gradient(180deg, #C24415, #9E370E); color: var(--bone); padding: 5rem 0; text-align: center; position: relative; overflow: hidden }
+.band h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); max-width: 18em; margin: 0 auto 1.2rem }
+.band p { max-width: 36em; margin: 0 auto 2rem; color: rgba(249, 249, 248, .9) }
+
+/* Footer (the lab game canvas lives behind this content) */
+footer.site { background: var(--iron-deep); padding: 4.5rem 0 2.5rem; border-top: 1px solid rgba(249, 249, 248, .07); position: relative; overflow: hidden }
+footer.site .wrap { position: relative }
+#lgcv { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none }
+.fgrid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem }
+@media (max-width: 760px) { .fgrid { grid-template-columns: 1fr 1fr } }
+footer.site .logo { height: 30px; width: auto; margin-bottom: 1rem }
+footer.site .blurb { font-size: .85rem; color: var(--haze); max-width: 26em }
+.fcol h4 { font-family: var(--mono); font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--haze); margin: 0 0 1rem }
+.fcol a { display: block; font-size: .88rem; color: var(--bone); opacity: .85; padding: .28rem 0 }
+.fcol a:hover { color: var(--ember); opacity: 1 }
+.fbottom { border-top: 1px solid rgba(249, 249, 248, .08); padding-top: 1.6rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--haze) }
