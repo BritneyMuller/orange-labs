@@ -45,7 +45,7 @@ Aesthetic direction: dark, modern, signaly.co-inspired — Iron/Midnight Tide ca
 - Existing homepage copy inventory is in docs/plan.md — reuse it; it's proven. Rebuild = re-platform + redesign, not a copy rewrite.
 - Community CTA: "Join the Community" → community landing page → Circle join flow
 
-## SEO requirements (Britney is an SEO — this matters)
+## SEO requirements (SEO matters)
 
 - Unique title + meta description per page
 - Semantic HTML, real headings hierarchy, fast LCP (target Lighthouse 95+)
