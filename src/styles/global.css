@@ -204,41 +204,37 @@ section { padding: 5.5rem 0 }
 .quotecard .who strong { color: var(--bone) }
 
 /* Pricing */
-.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; align-items: start }
-@media (max-width: 900px) { .tiers { grid-template-columns: 1fr } }
-.tiers:has(.tier.full) { grid-template-columns: 1fr }
-.tier { background: var(--sandstone-card); color: var(--iron); border-radius: 14px; padding: 2.2rem 1.9rem; position: relative }
-.tier.hot { outline: 2px solid var(--ember); outline-offset: -2px }
-.tier .pop { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--ember); color: var(--bone); font-family: var(--mono); font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; padding: .4em 1em; border-radius: 999px }
-.tier h3 { font-size: 1.25rem }
-.tier .price { font-family: var(--display); font-weight: 700; font-size: 2.6rem; line-height: 1; margin: .7rem 0 .3rem; font-variant-numeric: tabular-nums }
-.tier .price small { font-size: 1.1rem; color: #5b5e63; font-family: var(--body); font-weight: 500 }
-.tier .risk { display: inline-block; font-family: var(--mono); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; border: 1px solid rgba(43, 46, 51, .25); border-radius: 999px; padding: .35em .9em; margin: .4rem 0 1rem; color: #5b5e63 }
-.tier .best { font-size: .85rem; color: #5b5e63; margin: 0 0 1.2rem }
-.tier .best strong { color: var(--iron) }
-.tier ul { list-style: none; padding: 0; margin: 0 0 1.6rem; display: grid; gap: .55rem }
-.tier ul li { display: flex; gap: .6em; font-size: .84rem; color: #44474c }
-.tier ul li::before { content: "✓"; color: var(--ember); font-weight: 700; flex: none }
-.tier .btn { width: 100%; justify-content: center }
-
-.tier.full {
+.pricecard {
+  background: var(--sandstone-card);
+  color: var(--iron);
+  border-radius: 16px;
+  max-width: 56rem;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.1fr 1.4fr auto;
-  grid-template-areas: "name best cta" "price best cta" "risk list cta";
-  column-gap: 2.5rem;
+  grid-template-columns: 1fr 1.3fr;
   align-items: center;
-  padding: 2.6rem 3rem;
 }
-.tier.full h3 { grid-area: name }
-.tier.full .price { grid-area: price }
-.tier.full .risk { grid-area: risk; justify-self: start }
-.tier.full .best { grid-area: best; margin-bottom: .8rem }
-.tier.full ul { grid-area: list; grid-template-columns: repeat(2, 1fr); margin: 0 }
-.tier.full .btn { grid-area: cta; width: auto; padding: 1em 2.6em; white-space: nowrap }
-@media (max-width: 860px) {
-  .tier.full { grid-template-columns: 1fr; grid-template-areas: "name" "price" "risk" "best" "list" "cta" }
-  .tier.full ul { grid-template-columns: 1fr }
-  .tier.full .btn { width: 100% }
+.pricemain {
+  text-align: center;
+  padding: 3rem 2.5rem;
+  border-right: 1px solid rgba(43, 46, 51, .12);
+}
+.pricemain h3 { font-size: 1.2rem }
+.pricemain .price { font-family: var(--display); font-weight: 700; font-size: 3rem; line-height: 1; margin: .9rem 0 .4rem; font-variant-numeric: tabular-nums }
+.pricemain .price small { font-size: 1.15rem; color: #5b5e63; font-family: var(--body); font-weight: 500 }
+.pricemain .risk { display: inline-block; font-family: var(--mono); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase; border: 1px solid rgba(43, 46, 51, .25); border-radius: 999px; padding: .35em .9em; margin: .4rem 0 1.8rem; color: #5b5e63 }
+.pricemain .btn { display: flex; width: 100%; justify-content: center }
+.pricedetails { padding: 3rem 2.8rem }
+.pricedetails .best { font-size: .9rem; color: #5b5e63; margin: 0 0 1.3rem }
+.pricedetails .best strong { color: var(--iron) }
+.pricedetails ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: .7rem }
+.pricedetails ul li { display: flex; gap: .6em; font-size: .88rem; color: #44474c }
+.pricedetails ul li::before { content: "✓"; color: var(--ember); font-weight: 700; flex: none }
+@media (max-width: 760px) {
+  .pricecard { grid-template-columns: 1fr }
+  .pricemain { border-right: none; border-bottom: 1px solid rgba(43, 46, 51, .12); padding: 2.4rem 1.8rem }
+  .pricedetails { padding: 2.4rem 1.8rem }
+  .pricedetails ul { grid-template-columns: 1fr }
 }
 
 /* Value stats */
@@ -280,11 +276,10 @@ section { padding: 5.5rem 0 }
 footer.site { background: var(--iron-deep); padding: 4.5rem 0 2.5rem; border-top: 1px solid rgba(249, 249, 248, .07); position: relative; overflow: hidden }
 footer.site .wrap { position: relative }
 #lgcv { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none }
-.newsletter { max-width: 30rem; margin: 0 0 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid rgba(249, 249, 248, .08) }
-.newsletter h3 { font-size: 1.5rem; color: var(--bone); margin-bottom: .7rem }
-.newsletter p { font-size: .88rem; color: var(--haze); margin: 0 0 1.4rem }
-.fgrid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem }
-@media (max-width: 760px) { .fgrid { grid-template-columns: 1fr 1fr } }
+.newsletter { max-width: 24rem; margin: 0 0 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(249, 249, 248, .08) }
+.newsletter .eyebrow { margin-bottom: .8rem }
+.fgrid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-bottom: 3rem }
+@media (max-width: 760px) { .fgrid { grid-template-columns: 1fr } }
 footer.site .logo { height: 30px; width: auto; margin-bottom: 1rem }
 footer.site .blurb { font-size: .85rem; color: var(--haze); max-width: 26em }
 .fcol h4 { font-family: var(--mono); font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--haze); margin: 0 0 1rem }

@@ -228,6 +228,24 @@ const faqSchema = {
   <section class="midnight">
     <div class="wrap">
       <div class="centerhead rv">
+        <div class="eyebrow">{home.lukeTestimonial.eyebrow}</div>
+        <h2>{home.lukeTestimonial.heading}</h2>
+      </div>
+      <div class="video-embed rv" style="max-width: 48rem; margin: 0 auto">
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${home.lukeTestimonial.youtubeId}`}
+          title={home.lukeTestimonial.videoTitle}
+          loading="lazy"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="on-light">
+    <div class="wrap">
+      <div class="centerhead rv">
         <div class="eyebrow">{home.results.eyebrow}</div>
         <h2>{home.results.heading}</h2>
       </div>
@@ -236,14 +254,8 @@ const faqSchema = {
           <blockquote>{home.results.quote}</blockquote>
           <p class="who"><strong>{home.results.who}</strong> · {home.results.whoDetail}</p>
         </div>
-        <div class="video-embed">
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${home.results.youtubeId}`}
-            title={home.results.videoTitle}
-            loading="lazy"
-            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          />
+        <div class="photo">
+          <img src={home.results.image} alt={home.results.imageAlt} loading="lazy" />
         </div>
       </div>
     </div>
@@ -255,39 +267,26 @@ const faqSchema = {
         <div class="eyebrow">{home.pricing.eyebrow}</div>
         <h2>{home.pricing.heading}</h2>
       </div>
-      <div class="tiers">
-        {
-          home.pricing.tiers.map((tier, i) => (
-            <div
-              class={[
-                'tier',
-                tier.hot && 'hot',
-                home.pricing.tiers.length === 1 && 'full',
-                'rv',
-              ]
-                .filter(Boolean)
-                .join(' ')}
-              style={`--i:${i}`}
-            >
-              {tier.hot && <span class="pop">Most popular</span>}
-              <h3>{tier.name}</h3>
-              <div class="price">
-                {tier.price}
-                {tier.per && <small>{tier.per}</small>}
-              </div>
-              <span class="risk">{tier.risk}</span>
-              <p class="best">
-                <strong>Best for:</strong> {tier.best}
-              </p>
-              <ul>
-                {tier.includes.map((line) => <li>{line}</li>)}
-              </ul>
-              <a class={tier.hot ? 'btn btn-ember' : 'btn btn-iron'} href={tier.cta.href}>
-                {tier.cta.label}
-              </a>
-            </div>
-          ))
-        }
+      <div class="pricecard rv">
+        <div class="pricemain">
+          <h3>{home.pricing.name}</h3>
+          <div class="price">
+            {home.pricing.price}
+            {home.pricing.per && <small>{home.pricing.per}</small>}
+          </div>
+          <span class="risk">{home.pricing.risk}</span>
+          <a class="btn btn-ember" href={home.pricing.cta.href}>
+            {home.pricing.cta.label}
+          </a>
+        </div>
+        <div class="pricedetails">
+          <p class="best">
+            <strong>Best for:</strong> {home.pricing.best}
+          </p>
+          <ul>
+            {home.pricing.includes.map((line) => <li>{line}</li>)}
+          </ul>
+        </div>
       </div>
     </div>
   </section>

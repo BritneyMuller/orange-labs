@@ -33,21 +33,9 @@
         "heading": "Explore",
         "links": [
           { "label": "Community", "href": "https://community.orangelabs.co" },
-          { "label": "The Guide", "href": "/guide" },
-          { "label": "Pricing", "href": "/#pricing" }
-        ]
-      },
-      {
-        "heading": "Community",
-        "links": [
+          { "label": "Blog", "href": "/blog" },
+          { "label": "Pricing", "href": "/#pricing" },
           { "label": "Join the Lab", "href": "https://community.orangelabs.co/checkout/member" },
-          { "label": "Log in", "href": "https://community.orangelabs.co" }
-        ]
-      },
-      {
-        "heading": "Elsewhere",
-        "links": [
-          { "label": "GitHub", "href": "https://github.com/BritneyMuller" },
           { "label": "Contact", "href": "mailto:hello@orangelabs.co" }
         ]
       }

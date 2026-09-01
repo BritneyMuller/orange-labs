@@ -27,8 +27,8 @@
       "Connect with marketers actively building with AI",
       "Learn live: workshops, hackathons, and expert sessions"
     ],
-    "photo": "/live-workshop.webp",
-    "photoAlt": "Live Orange Labs workshop"
+    "photo": "/local-llms-workshop.webp",
+    "photoAlt": "Local LLMs 101, a live Orange Labs workshop"
   },
   "problem": {
     "eyebrow": "Exp.01 · The problem",
@@ -123,7 +123,7 @@
   "origin": {
     "eyebrow": "The origin story",
     "heading": "Built by demand. Not a business plan.",
-    "stars": "★★★★★ 4.8/5 by 330+ students",
+    "stars": "★★★★★ 4.8/5 by 700+ students",
     "lede": "Graduates of the top-rated Actionable AI course kept asking for:",
     "checks": [
       "A place to stay current on new tools and models",
@@ -148,36 +148,37 @@
     "role": "Founder, Orange Labs",
     "credentials": "Marketing Manager, Hugging Face · AI Consultant, Amazon"
   },
+  "lukeTestimonial": {
+    "eyebrow": "Member voices",
+    "heading": "Hear it from a member",
+    "youtubeId": "EnVjFp5xzuc",
+    "videoTitle": "Orange Labs member testimonial — Luke Gosha"
+  },
   "results": {
     "eyebrow": "Exp.047 · Real results",
     "heading": "Members ship real tools",
-    "quote": "\"It gives me entities as well, entities that are similar. I built an SEO reporting tool on a Sunday afternoon.\"",
+    "quote": "\"Built an entire SEO reporting tool on a Sunday afternoon.\"",
     "who": "Martin Canchola",
     "whoDetail": "Apartment SEO Co-Founder · no programming background",
-    "youtubeId": "EnVjFp5xzuc",
-    "videoTitle": "Orange Labs member testimonial — Luke Gosha"
+    "image": "/martin-demo.webp",
+    "imageAlt": "Martin Canchola's AI-powered SEO tool demo"
   },
   "pricing": {
     "eyebrow": "Membership",
     "heading": "One plan. Everything's included.",
-    "tiers": [
-      {
-        "name": "The Community",
-        "price": "$49",
-        "per": "/mo",
-        "risk": "Try 7 days risk-free",
-        "best": "marketers who need ongoing support and a safe space to experiment.",
-        "includes": [
-          "Safe lab environment with peer support",
-          "Real-time help from AI experts",
-          "Weekly hands-on live workshops",
-          "Resource library: templates and prompts",
-          "Curated AI news, minus the hype"
-        ],
-        "cta": { "label": "Join the Community", "href": "https://community.orangelabs.co/checkout/member" },
-        "hot": false
-      }
-    ]
+    "name": "The Community",
+    "price": "$49",
+    "per": "/mo",
+    "risk": "Try 7 days risk-free",
+    "best": "marketers who need ongoing support and a safe space to experiment.",
+    "includes": [
+      "Safe lab environment with peer support",
+      "Real-time help from AI experts",
+      "Weekly hands-on live workshops",
+      "Resource library: templates and prompts",
+      "Curated AI news, minus the hype"
+    ],
+    "cta": { "label": "Join the Community", "href": "https://community.orangelabs.co/checkout/member" }
   },
   "faq": {
     "eyebrow": "Field notes · FAQ",
@@ -189,11 +190,7 @@
       },
       {
         "q": "How much time does this take?",
-        "a": "Most members start with one 90-minute session a week and the Steal This library between sessions. Sessions are working time, not homework: you leave with a finished asset."
-      },
-      {
-        "q": "Is this just another course?",
-        "a": "No. Courses give you notes. The Lab gives you reps: live hackathons, feedback on your actual work, and a community that expects you to ship."
+        "a": "As much or as little as you want. Weekly \"Quick AI Tips & Tricks\" land in your inbox, and you can drop into the Lab whenever you need support or want to see what other members are building."
       },
       {
         "q": "What if it's not for me?",
