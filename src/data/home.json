@@ -12,14 +12,14 @@
     "photo": "/hero-meetup.webp",
     "photoAlt": "Orange Labs community meetup",
     "expCard": {
-      "tag": "Exp.047 · Shipped",
-      "line": "SEO reporting tool, built on a Sunday afternoon",
-      "who": "Martin C. · no programming background"
+      "tag": "Exp.049 · Shipped",
+      "line": "A working AI tool, built between two meetings",
+      "who": "Built live in the Lab"
     }
   },
   "whatIs": {
     "eyebrow": "What is Orange Labs?",
-    "heading": "Stop talking about AI. Start building with it.",
+    "heading": "Learn by building, not by watching.",
     "body": "Orange Labs is where marketers stop watching tutorials and start shipping real AI tools. Every feature is built around doing, with community, guidance, and accountability to keep you moving.",
     "checks": [
       "Share wins, get feedback, and never build alone",
@@ -78,7 +78,7 @@
     "items": [
       {
         "title": "Join and introduce yourself",
-        "html": "Tell 375+ builders who you are and what you want to build. <strong>You'll get replies the same day.</strong>"
+        "html": "Tell {{count}}+ builders who you are and what you want to build. <strong>You'll get replies the same day.</strong>"
       },
       {
         "title": "Pick your first experiment",
@@ -162,6 +162,7 @@
     "eyebrow": "Exp.047 · Real results",
     "heading": "Members ship real tools",
     "quote": "\"Built an entire SEO reporting tool on a Sunday afternoon.\"",
+    "avatar": "/martin-avatar.webp",
     "who": "Martin Canchola",
     "whoDetail": "Apartment SEO Co-Founder · no programming background",
     "image": "/martin-demo.webp",
@@ -190,7 +191,7 @@
     "items": [
       {
         "q": "I'm not technical. Will I keep up?",
-        "a": "Orange Labs exists because most AI training is either too basic or too technical. Everything here is explained in plain marketing language, and members with zero programming background ship real tools. Martin built an SEO reporting tool on a Sunday afternoon."
+        "a": "Orange Labs exists because most AI training is either too basic or too technical. Everything here is explained in plain marketing language, no CS degree required, ever."
       },
       {
         "q": "How much time does this take?",
@@ -204,7 +205,7 @@
   },
   "band": {
     "heading": "Let's fail fast, start messy & succeed together",
-    "sub": "Upskill with 375+ other Marketers today",
+    "sub": "Upskill with {{count}}+ other Marketers today",
     "cta": { "label": "Join the Lab →", "href": "https://community.orangelabs.co/checkout/member" },
     "note": "$49/mo · 7 days risk-free · cancel any time"
   }

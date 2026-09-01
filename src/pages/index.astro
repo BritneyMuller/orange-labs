@@ -5,6 +5,7 @@ import site from '../data/site.json';
 import home from '../data/home.json';
 
 const memberCountNumber = parseInt(site.memberCount, 10);
+const withCount = (text: string) => text.replaceAll('{{count}}', String(memberCountNumber));
 
 const icons: Record<string, string> = {
   flask:
@@ -153,7 +154,7 @@ const faqSchema = {
             <div class="step ticks rv" style={`--i:${i}`}>
               <div class="snum">Step 0{i + 1}</div>
               <h3>{step.title}</h3>
-              <p set:html={step.html} />
+              <p set:html={withCount(step.html)} />
             </div>
           ))
         }
@@ -252,7 +253,10 @@ const faqSchema = {
       <div class="quotecard ticks rv">
         <div>
           <blockquote>{home.results.quote}</blockquote>
-          <p class="who"><strong>{home.results.who}</strong> · {home.results.whoDetail}</p>
+          <p class="who">
+            <img class="whoavatar" src={home.results.avatar} alt={home.results.who} width="40" height="40" />
+            <span><strong>{home.results.who}</strong> · {home.results.whoDetail}</span>
+          </p>
         </div>
         <div class="photo">
           <img src={home.results.image} alt={home.results.imageAlt} loading="lazy" />
@@ -316,7 +320,7 @@ const faqSchema = {
   <div class="band">
     <div class="wrap">
       <h2 class="rv">{home.band.heading}</h2>
-      <p class="rv" style="--i:1">{home.band.sub}</p>
+      <p class="rv" style="--i:1">{withCount(home.band.sub)}</p>
       <div class="rv" style="--i:2">
         <a class="btn btn-iron" href={home.band.cta.href}>{home.band.cta.label}</a>
         <p class="ctanote">{home.band.note}</p>
