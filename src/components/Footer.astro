@@ -10,6 +10,18 @@ const year = new Date().getFullYear();
       <div>
         <img class="logo" src="/logos/orange-labs.png" alt="Orange Labs" width="720" height="131" />
         <p class="blurb">{site.footer.blurb}</p>
+        <div id="newsletter" class="newsletter">
+          <div data-is-popup="false" data-circle-form-uid="cf66e0ae"></div>
+          <script is:inline>
+            if (!window.circleFormsScriptLoaded) {
+              window.circleFormsScriptLoaded = true;
+              const script = document.createElement('script');
+              script.src = 'https://community.orangelabs.co/external/form-embeds.js';
+              script.defer = true;
+              document.head.appendChild(script);
+            }
+          </script>
+        </div>
       </div>
       {
         site.footer.columns.map((col) => (
