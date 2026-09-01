@@ -11,7 +11,16 @@ const year = new Date().getFullYear();
       <h3>Get Lab updates in your inbox</h3>
       <p>New experiments, workshops, and guide chapters as they ship. No spam, unsubscribe any time.</p>
       <div class="newsletter-embed">
-        <!-- TODO: paste Circle "Newsletter" form embed code here (Settings → Forms → Newsletter → Share/Embed) -->
+        <div data-is-popup="false" data-circle-form-uid="6e435f31"></div>
+        <script is:inline>
+          if (!window.circleFormsScriptLoaded) {
+            window.circleFormsScriptLoaded = true;
+            const script = document.createElement('script');
+            script.src = 'https://community.orangelabs.co/external/form-embeds.js';
+            script.defer = true;
+            document.head.appendChild(script);
+          }
+        </script>
       </div>
     </div>
     <div class="fgrid">

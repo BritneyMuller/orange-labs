@@ -208,7 +208,17 @@ const faqSchema = {
       <div class="tiers">
         {
           home.pricing.tiers.map((tier, i) => (
-            <div class={tier.hot ? 'tier hot rv' : 'tier rv'} style={`--i:${i}`}>
+            <div
+              class={[
+                'tier',
+                tier.hot && 'hot',
+                home.pricing.tiers.length === 1 && 'full',
+                'rv',
+              ]
+                .filter(Boolean)
+                .join(' ')}
+              style={`--i:${i}`}
+            >
               {tier.hot && <span class="pop">Most popular</span>}
               <h3>{tier.name}</h3>
               <div class="price">
