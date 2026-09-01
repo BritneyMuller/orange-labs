@@ -202,8 +202,9 @@ section { padding: 5.5rem 0 }
 .quotecard { background: var(--midnight-deep); border: 1px solid rgba(249, 249, 248, .1); border-radius: 16px; padding: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; color: var(--bone) }
 @media (max-width: 860px) { .quotecard { grid-template-columns: 1fr } }
 .quotecard blockquote { margin: 0; font-size: 1.15rem; line-height: 1.55; font-weight: 500; color: var(--bone) }
-.quotecard .who { margin-top: 1.2rem; font-size: .85rem; color: var(--haze) }
+.quotecard .who { margin-top: 1.2rem; font-size: .85rem; color: var(--haze); display: flex; align-items: center; gap: .8em }
 .quotecard .who strong { color: var(--bone) }
+.whoavatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none }
 
 /* Pricing */
 .pricecard {
@@ -278,8 +279,6 @@ section { padding: 5.5rem 0 }
 footer.site { background: var(--iron-deep); padding: 4.5rem 0 2.5rem; border-top: 1px solid rgba(249, 249, 248, .07); position: relative; overflow: hidden }
 footer.site .wrap { position: relative }
 #lgcv { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none }
-.newsletter { max-width: 24rem; margin: 0 0 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(249, 249, 248, .08) }
-.newsletter .eyebrow { margin-bottom: .8rem }
 .fgrid { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; margin-bottom: 3rem }
 @media (max-width: 760px) { .fgrid { grid-template-columns: 1fr } }
 footer.site .logo { height: 30px; width: auto; margin-bottom: 1rem }
