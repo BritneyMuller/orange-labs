@@ -9,6 +9,7 @@
   "nav": [
     { "label": "Community", "href": "https://community.orangelabs.co" },
     { "label": "Guide", "href": "/guide" },
+    { "label": "Blog", "href": "/blog" },
     { "label": "Pricing", "href": "/#pricing" }
   ],
   "ticker": [

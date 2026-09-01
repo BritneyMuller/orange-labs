@@ -10,7 +10,8 @@
     "primaryCta": { "label": "Join the Community →", "href": "https://community.orangelabs.co/checkout/member" },
     "primaryNote": "$49/mo · 7 days risk-free · cancel any time",
     "secondaryCta": { "label": "Stay Updated", "href": "#newsletter" },
-    "photoLabel": "[ Photo · community meetup ]",
+    "photo": "/hero-meetup.webp",
+    "photoAlt": "Orange Labs community meetup",
     "expCard": {
       "tag": "Exp.047 · Shipped",
       "line": "SEO reporting tool, built on a Sunday afternoon",
@@ -26,7 +27,8 @@
       "Connect with marketers actively building with AI",
       "Learn live: workshops, hackathons, and expert sessions"
     ],
-    "photoLabel": "[ Photo · live workshop ]"
+    "photo": "/live-workshop.webp",
+    "photoAlt": "Live Orange Labs workshop"
   },
   "problem": {
     "eyebrow": "Exp.01 · The problem",
@@ -52,6 +54,24 @@
       }
     ]
   },
+  "valueStats": {
+    "eyebrow": "Real outcomes",
+    "heading": "What members actually walk away with",
+    "items": [
+      {
+        "stat": "30+",
+        "label": "Members who've landed new jobs, clients, or opportunities through the Lab"
+      },
+      {
+        "stat": "Direct DM access",
+        "label": "Straight answers from working AI experts, no generic advice"
+      },
+      {
+        "stat": "Real feedback",
+        "label": "Eyes on your actual work before you ship it, every week"
+      }
+    ]
+  },
   "steps": {
     "eyebrow": "The protocol · How it works",
     "heading": "Your first week in the lab",
@@ -66,7 +86,7 @@
       },
       {
         "title": "Ship it at the next hackathon",
-        "html": "Get unstuck live with the group, then post your win. <strong>That's the whole culture.</strong>"
+        "html": "Get unstuck live with the group, then post your win."
       }
     ]
   },
@@ -112,7 +132,21 @@
       "Working demos that don't require reading technical docs"
     ],
     "cta": { "label": "Join the Community →", "href": "https://community.orangelabs.co/checkout/member" },
-    "photoLabel": "[ Photo · the lab bench ]"
+    "photo": "/lab-bench.webp",
+    "photoAlt": "The Orange Labs bench"
+  },
+  "founder": {
+    "eyebrow": "Community Founder",
+    "heading": "Real AI experience. Top-rated teaching.",
+    "photo": "/britney-muller.webp",
+    "photoAlt": "Britney Muller, founder of Orange Labs",
+    "paragraphs": [
+      "I've spent over a decade inside the ML and AI world, watching how quietly it's designed to exclude: academically, financially, geographically, linguistically. Most of those barriers are unnecessary. That's not a you problem. It's an industry problem.",
+      "Orange Labs started as a question from my students: \"Where do we go from here?\" I didn't have a great answer, so I built one. A place to ask anything, ship weird experiments, and stay connected to people who actually want you to succeed."
+    ],
+    "name": "Britney Muller",
+    "role": "Founder, Orange Labs",
+    "credentials": "Marketing Manager, Hugging Face · AI Consultant, Amazon"
   },
   "results": {
     "eyebrow": "Exp.047 · Real results",
@@ -120,7 +154,8 @@
     "quote": "\"It gives me entities as well, entities that are similar. I built an SEO reporting tool on a Sunday afternoon.\"",
     "who": "Martin Canchola",
     "whoDetail": "Apartment SEO Co-Founder · no programming background",
-    "videoLabel": "[ Video · member demo ]"
+    "youtubeId": "EnVjFp5xzuc",
+    "videoTitle": "Orange Labs member testimonial — Luke Gosha"
   },
   "pricing": {
     "eyebrow": "Membership",

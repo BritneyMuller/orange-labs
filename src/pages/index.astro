@@ -77,7 +77,9 @@ const faqSchema = {
         </div>
       </div>
       <div class="bench rise" style="--d:.55s">
-        <div class="ph ticks">{home.hero.photoLabel}</div>
+        <div class="photo ticks">
+          <img src={home.hero.photo} alt={home.hero.photoAlt} loading="eager" />
+        </div>
         <div class="expcard">
           <div class="tag"><span class="dot"></span>{home.hero.expCard.tag}</div>
           <p>{home.hero.expCard.line}</p>
@@ -91,7 +93,9 @@ const faqSchema = {
 
   <section class="on-light">
     <div class="wrap split">
-      <div class="ph ticks rv">{home.whatIs.photoLabel}</div>
+      <div class="photo ticks rv">
+        <img src={home.whatIs.photo} alt={home.whatIs.photoAlt} loading="lazy" />
+      </div>
       <div class="rv" style="--i:1">
         <div class="eyebrow">{home.whatIs.eyebrow}</div>
         <h2>{home.whatIs.heading}</h2>
@@ -117,6 +121,25 @@ const faqSchema = {
               <h3>{card.title}</h3>
               <p>{card.body}</p>
               <p class="answer">{card.answer}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="dotgrid">
+    <div class="wrap">
+      <div class="centerhead rv">
+        <div class="eyebrow">{home.valueStats.eyebrow}</div>
+        <h2>{home.valueStats.heading}</h2>
+      </div>
+      <div class="statrow">
+        {
+          home.valueStats.items.map((item, i) => (
+            <div class="statitem rv" style={`--i:${i}`}>
+              <div class="statnum">{item.stat}</div>
+              <p>{item.label}</p>
             </div>
           ))
         }
@@ -179,7 +202,26 @@ const faqSchema = {
           <a class="btn btn-ember" href={home.origin.cta.href}>{home.origin.cta.label}</a>
         </div>
       </div>
-      <div class="ph ticks rv" style="--i:1">{home.origin.photoLabel}</div>
+      <div class="photo ticks rv" style="--i:1">
+        <img src={home.origin.photo} alt={home.origin.photoAlt} loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="on-light">
+    <div class="wrap split">
+      <div class="photo ticks rv">
+        <img src={home.founder.photo} alt={home.founder.photoAlt} loading="lazy" />
+      </div>
+      <div class="rv" style="--i:1">
+        <div class="eyebrow">{home.founder.eyebrow}</div>
+        <h2>{home.founder.heading}</h2>
+        {home.founder.paragraphs.map((p) => <p class="lede" style="margin-top:1.2rem">{p}</p>)}
+        <p class="founder-byline">
+          <strong>{home.founder.name}</strong> · {home.founder.role}
+        </p>
+        <p class="founder-creds">{home.founder.credentials}</p>
+      </div>
     </div>
   </section>
 
@@ -194,7 +236,15 @@ const faqSchema = {
           <blockquote>{home.results.quote}</blockquote>
           <p class="who"><strong>{home.results.who}</strong> · {home.results.whoDetail}</p>
         </div>
-        <div class="ph" style="min-height:240px">{home.results.videoLabel}</div>
+        <div class="video-embed">
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${home.results.youtubeId}`}
+            title={home.results.videoTitle}
+            loading="lazy"
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </div>
       </div>
     </div>
   </section>

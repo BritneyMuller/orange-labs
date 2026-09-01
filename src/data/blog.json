@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "title": "Blog — Orange Labs",
+    "description": "Field notes, experiments, and interactive guides from Orange Labs and Britney Muller's Substack."
+  },
+  "eyebrow": "From the Lab",
+  "heading": "Field notes & experiments",
+  "intro": "A mix of Substack essays and hands-on interactive pages built for this community.",
+  "substackFeedUrl": "https://britneymuller.substack.com/feed",
+  "substackUrl": "https://britneymuller.substack.com",
+  "customPosts": []
+}

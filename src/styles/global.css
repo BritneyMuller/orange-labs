@@ -73,6 +73,10 @@ h2 { font-size: clamp(2.1rem, 4.4vw, 3.3rem) }
 
 /* Photo placeholders (until real photos land) */
 .ph { border: 1.5px dashed rgba(249, 249, 248, .25); border-radius: 14px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; min-height: 300px; font-family: var(--mono); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--haze); background-image: radial-gradient(rgba(249, 249, 248, .06) 1px, transparent 1px); background-size: 20px 20px }
+.photo { border-radius: 14px; overflow: hidden; min-height: 300px }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block }
+.video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16 / 9 }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0 }
 .on-light .ph { border-color: rgba(43, 46, 51, .28); color: #7a7d82; background-image: radial-gradient(rgba(43, 46, 51, .09) 1px, transparent 1px) }
 
 /* ============ Motion system ============ */
@@ -236,6 +240,25 @@ section { padding: 5.5rem 0 }
   .tier.full ul { grid-template-columns: 1fr }
   .tier.full .btn { width: 100% }
 }
+
+/* Value stats */
+.statrow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; text-align: center }
+@media (max-width: 760px) { .statrow { grid-template-columns: 1fr } }
+.statnum { font-family: var(--display); font-weight: 700; font-size: 1.9rem; line-height: 1.05; color: var(--ember); margin-bottom: .6rem }
+.statitem p { font-size: .9rem; color: var(--haze); max-width: 22em; margin: 0 auto }
+
+/* Founder */
+.founder-byline { font-size: .95rem; margin: 1.6rem 0 .2rem }
+.founder-creds { font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; color: #5b5e63 }
+
+/* Blog */
+.postgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem }
+@media (max-width: 900px) { .postgrid { grid-template-columns: 1fr } }
+.postcard { display: block; background: var(--sandstone-card); border-radius: 14px; padding: 1.8rem; color: var(--iron); transition: transform .2s var(--ease), box-shadow .2s var(--ease) }
+.postcard:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(22, 32, 47, .15) }
+.postcard h3 { font-size: 1.1rem; margin: .6rem 0 .5rem; text-transform: none }
+.postcard p { font-size: .85rem; color: #5b5e63 }
+.posttype { font-family: var(--mono); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; color: #8a5b2d }
 
 /* FAQ */
 .faq { max-width: 52rem; margin: 0 auto }
