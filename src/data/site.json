@@ -9,8 +9,6 @@
   "nav": [
     { "label": "Community", "href": "https://community.orangelabs.co" },
     { "label": "Guide", "href": "/guide" },
-    { "label": "Projects", "href": "/projects" },
-    { "label": "Newsletter", "href": "/newsletter" },
     { "label": "Pricing", "href": "/#pricing" }
   ],
   "ticker": [
@@ -50,7 +48,7 @@
       {
         "heading": "Elsewhere",
         "links": [
-          { "label": "Newsletter", "href": "/newsletter" },
+          { "label": "Newsletter", "href": "#newsletter" },
           { "label": "GitHub", "href": "https://github.com/BritneyMuller" },
           { "label": "Contact", "href": "mailto:hello@orangelabs.co" }
         ]

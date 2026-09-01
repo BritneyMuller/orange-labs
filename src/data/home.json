@@ -9,7 +9,7 @@
     "lede": "Real AI skills through hands-on experiments, expert guidance, and a clear signal through the noise. No hype, just shipping.",
     "primaryCta": { "label": "Join the Community →", "href": "https://community.orangelabs.co/checkout/member" },
     "primaryNote": "$49/mo · 7 days risk-free · cancel any time",
-    "secondaryCta": { "label": "AI Guide", "href": "/guide" },
+    "secondaryCta": { "label": "Stay Updated", "href": "#newsletter" },
     "photoLabel": "[ Photo · community meetup ]",
     "expCard": {
       "tag": "Exp.047 · Shipped",
