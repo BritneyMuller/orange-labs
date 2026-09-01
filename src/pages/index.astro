@@ -61,15 +61,9 @@ const faqSchema = {
             <a class="btn btn-ember" href={home.hero.primaryCta.href}>{home.hero.primaryCta.label}</a>
             <p class="ctanote">{home.hero.primaryNote}</p>
           </div>
-          <a class="btn btn-ghost" href={home.hero.secondaryCta.href}>{home.hero.secondaryCta.label}</a>
         </div>
         <div class="proof rise" style="--d:1.05s">
-          <div class="avatars">
-            <span style="background:var(--midnight)">JC</span>
-            <span style="background:#8a5b2d">AM</span>
-            <span style="background:var(--ember)">MC</span>
-            <span style="background:#44608a">LG</span>
-          </div>
+          <img class="avatars" src="/member-avatars.webp" alt="Orange Labs members" width="120" height="45" />
           <p>
             <strong><span id="cnt" data-target={memberCountNumber}>{memberCountNumber}</span>+ marketers</strong>{' '}
             already inside, building with AI
@@ -93,7 +87,7 @@ const faqSchema = {
 
   <section class="on-light">
     <div class="wrap split">
-      <div class="photo ticks rv">
+      <div class={home.whatIs.photoContain ? 'photo contain ticks rv' : 'photo ticks rv'}>
         <img src={home.whatIs.photo} alt={home.whatIs.photoAlt} loading="lazy" />
       </div>
       <div class="rv" style="--i:1">
@@ -194,7 +188,13 @@ const faqSchema = {
         <div class="eyebrow">{home.origin.eyebrow}</div>
         <h2>{home.origin.heading}</h2>
         <div class="stars">{home.origin.stars}</div>
-        <p class="lede">{home.origin.lede}</p>
+        <p class="lede">
+          {home.origin.ledeBefore}
+          <a href={home.origin.ledeLinkHref} target="_blank" rel="noopener noreferrer">
+            {home.origin.ledeLinkText}
+          </a>
+          {home.origin.ledeAfter}
+        </p>
         <ul class="checks">
           {home.origin.checks.map((check) => <li>{check}</li>)}
         </ul>
