@@ -7,7 +7,7 @@
     "statusPill": "Open enrollment · new members daily",
     "headlineWords": ["The", "community", "for", "marketers", "who", "*build*", "with", "AI"],
     "lede": "Real AI skills through hands-on experiments, expert guidance, and a clear signal through the noise. No hype, just shipping.",
-    "primaryCta": { "label": "Join the Community →", "href": "/community" },
+    "primaryCta": { "label": "Join the Community →", "href": "https://community.orangelabs.co/checkout/member" },
     "primaryNote": "$49/mo · 7 days risk-free · cancel any time",
     "secondaryCta": { "label": "AI Guide", "href": "/guide" },
     "photoLabel": "[ Photo · community meetup ]",
@@ -111,7 +111,7 @@
       "A space to share AI wins with people who get it",
       "Working demos that don't require reading technical docs"
     ],
-    "cta": { "label": "Join the Community →", "href": "/community" },
+    "cta": { "label": "Join the Community →", "href": "https://community.orangelabs.co/checkout/member" },
     "photoLabel": "[ Photo · the lab bench ]"
   },
   "results": {
@@ -123,8 +123,8 @@
     "videoLabel": "[ Video · member demo ]"
   },
   "pricing": {
-    "eyebrow": "Need more than the community?",
-    "heading": "Go deeper when you're ready",
+    "eyebrow": "Membership",
+    "heading": "One plan. Everything's included.",
     "tiers": [
       {
         "name": "The Community",
@@ -139,38 +139,7 @@
           "Resource library: templates and prompts",
           "Curated AI news, minus the hype"
         ],
-        "cta": { "label": "Join the Community", "href": "/community" },
-        "hot": false
-      },
-      {
-        "name": "The Accelerator",
-        "price": "$1,495",
-        "per": "",
-        "risk": "Try 14 days risk-free",
-        "best": "marketers who need to up-skill and ship a specific AI solution ASAP.",
-        "includes": [
-          "8 live sessions with AI expert guests",
-          "Build a real project in 4 weeks",
-          "Small cohort and LinkedIn certificate",
-          "Lifetime access, all future updates",
-          "1 year of Community included ($588 value)"
-        ],
-        "cta": { "label": "Start building", "href": "/pricing" },
-        "hot": true
-      },
-      {
-        "name": "Enterprise AI Training",
-        "price": "$39,900",
-        "per": "",
-        "risk": "One-time investment",
-        "best": "teams and agencies building an AI-first culture.",
-        "includes": [
-          "8 private, customized live sessions",
-          "AI workflows for your goals and tasks",
-          "Project-based implementation",
-          "Team access to Orange Labs for 1 year"
-        ],
-        "cta": { "label": "Apply now", "href": "/pricing" },
+        "cta": { "label": "Join the Community", "href": "https://community.orangelabs.co/checkout/member" },
         "hot": false
       }
     ]
@@ -189,7 +158,7 @@
       },
       {
         "q": "Is this just another course?",
-        "a": "No. Courses give you notes. The Lab gives you reps: live hackathons, feedback on your actual work, and a community that expects you to ship. The Accelerator course is there when you want to go deeper."
+        "a": "No. Courses give you notes. The Lab gives you reps: live hackathons, feedback on your actual work, and a community that expects you to ship."
       },
       {
         "q": "What if it's not for me?",
@@ -200,7 +169,7 @@
   "band": {
     "heading": "Let's fail fast, start messy & succeed together",
     "sub": "Upskill with 375+ other Marketers today",
-    "cta": { "label": "Join the Lab →", "href": "/community" },
+    "cta": { "label": "Join the Lab →", "href": "https://community.orangelabs.co/checkout/member" },
     "note": "$49/mo · 7 days risk-free · cancel any time"
   }
 }

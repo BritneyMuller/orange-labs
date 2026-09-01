@@ -3,14 +3,15 @@
   "tagline": "The community for marketers who build with AI",
   "url": "https://orangelabs.co",
   "communityUrl": "https://community.orangelabs.co",
+  "checkoutUrl": "https://community.orangelabs.co/checkout/member",
   "substackUrl": "https://britneymuller.substack.com",
   "memberCount": "375+",
   "nav": [
-    { "label": "Community", "href": "/community" },
+    { "label": "Community", "href": "https://community.orangelabs.co" },
     { "label": "Guide", "href": "/guide" },
     { "label": "Projects", "href": "/projects" },
     { "label": "Newsletter", "href": "/newsletter" },
-    { "label": "Pricing", "href": "/pricing" }
+    { "label": "Pricing", "href": "/#pricing" }
   ],
   "ticker": [
     "Exp.048 · spun up",
@@ -32,16 +33,16 @@
       {
         "heading": "Explore",
         "links": [
-          { "label": "Community", "href": "/community" },
+          { "label": "Community", "href": "https://community.orangelabs.co" },
           { "label": "The Guide", "href": "/guide" },
           { "label": "Projects", "href": "/projects" },
-          { "label": "Pricing", "href": "/pricing" }
+          { "label": "Pricing", "href": "/#pricing" }
         ]
       },
       {
         "heading": "Community",
         "links": [
-          { "label": "Join the Lab", "href": "https://community.orangelabs.co" },
+          { "label": "Join the Lab", "href": "https://community.orangelabs.co/checkout/member" },
           { "label": "Log in", "href": "https://community.orangelabs.co" },
           { "label": "Submit a project", "href": "/projects" }
         ]
