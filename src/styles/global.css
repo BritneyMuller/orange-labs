@@ -47,6 +47,8 @@ h2 { font-size: clamp(2.1rem, 4.4vw, 3.3rem) }
 .eyebrow { font-family: var(--mono); font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--ember); display: flex; align-items: center; gap: .75em; margin-bottom: 1.1rem }
 .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--ember); flex: none }
 .lede { color: var(--haze); font-size: 1.06rem; max-width: 34em }
+.lede a { color: var(--ember); text-decoration: underline; text-underline-offset: .2em }
+.lede a:hover { opacity: .8 }
 .on-light .lede { color: #5b5e63 }
 
 /* Buttons */
@@ -75,6 +77,8 @@ h2 { font-size: clamp(2.1rem, 4.4vw, 3.3rem) }
 .ph { border: 1.5px dashed rgba(249, 249, 248, .25); border-radius: 14px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; min-height: 300px; font-family: var(--mono); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--haze); background-image: radial-gradient(rgba(249, 249, 248, .06) 1px, transparent 1px); background-size: 20px 20px }
 .photo { border-radius: 14px; overflow: hidden; min-height: 300px }
 .photo img { width: 100%; height: 100%; object-fit: cover; display: block }
+.photo.contain { background: var(--midnight-deep); display: flex; align-items: center; justify-content: center }
+.photo.contain img { width: 100%; height: 100%; object-fit: contain }
 .video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16 / 9 }
 .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0 }
 .on-light .ph { border-color: rgba(43, 46, 51, .28); color: #7a7d82; background-image: radial-gradient(rgba(43, 46, 51, .09) 1px, transparent 1px) }
@@ -137,9 +141,7 @@ nav.site .logo { height: 34px; width: auto }
 .ctanote { margin: .6rem 0 0; font-family: var(--mono); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--haze) }
 .band .ctanote { color: rgba(249, 249, 248, .85); margin-top: 1.3rem }
 .proof { display: flex; align-items: center; gap: 1rem }
-.avatars { display: flex }
-.avatars span { width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--iron-deep); margin-left: -10px; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 700; font-size: .8rem; color: var(--bone) }
-.avatars span:first-child { margin-left: 0 }
+.avatars { height: 42px; width: auto; display: block }
 .proof p { margin: 0; font-size: .85rem; color: var(--haze) }
 .proof strong { color: var(--bone); font-variant-numeric: tabular-nums }
 .bench { position: relative }
@@ -197,9 +199,9 @@ section { padding: 5.5rem 0 }
 .stars { font-size: .85rem; color: #8a5b2d; font-family: var(--mono); letter-spacing: .06em; margin: 1rem 0 .4rem }
 
 /* Results */
-.quotecard { background: var(--midnight-deep); border: 1px solid rgba(249, 249, 248, .1); border-radius: 16px; padding: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center }
+.quotecard { background: var(--midnight-deep); border: 1px solid rgba(249, 249, 248, .1); border-radius: 16px; padding: 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; color: var(--bone) }
 @media (max-width: 860px) { .quotecard { grid-template-columns: 1fr } }
-.quotecard blockquote { margin: 0; font-size: 1.15rem; line-height: 1.55; font-weight: 500 }
+.quotecard blockquote { margin: 0; font-size: 1.15rem; line-height: 1.55; font-weight: 500; color: var(--bone) }
 .quotecard .who { margin-top: 1.2rem; font-size: .85rem; color: var(--haze) }
 .quotecard .who strong { color: var(--bone) }
 
