@@ -4,9 +4,6 @@ import Ticker from '../components/Ticker.astro';
 import site from '../data/site.json';
 import home from '../data/home.json';
 
-const memberCountNumber = parseInt(site.memberCount, 10);
-const withCount = (text: string) => text.replaceAll('{{count}}', String(memberCountNumber));
-
 const icons: Record<string, string> = {
   flask:
     '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v5l-5.5 9.5A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-3.5L14 8V3M7.5 15h9"/></svg>',
@@ -16,6 +13,8 @@ const icons: Record<string, string> = {
     '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M8.2 6h7.6M7 7.8l4 8M17 7.8l-4 8"/></svg>',
   library:
     '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 7l2-3h14l2 3M10 12h4"/></svg>',
+  briefcase:
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="19" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M2.5 13h19"/></svg>',
 };
 
 const faqSchema = {
@@ -27,6 +26,20 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: item.a },
   })),
 };
+
+// Splits copy around the {{memberCount}} token so the live number can be
+// swapped in client-side (see src/scripts/member-count.js) without ever
+// rendering a blank, zero, or loading state: the fallback text (from
+// site.memberCount) is what's server-rendered by default.
+const TOKEN = '{{memberCount}}';
+function splitCount(text: string): [string, string] {
+  const idx = text.indexOf(TOKEN);
+  if (idx === -1) return [text, ''];
+  return [text.slice(0, idx), text.slice(idx + TOKEN.length)];
+}
+const [heroLedeBefore, heroLedeAfter] = splitCount(home.hero.lede);
+const [proofBefore, proofAfter] = splitCount(home.hero.proofLine1);
+const [bandSubBefore, bandSubAfter] = splitCount(home.band.sub);
 ---
 
 <BaseLayout title={home.meta.title} description={home.meta.description}>
@@ -56,7 +69,9 @@ const faqSchema = {
             ))
           }
         </h1>
-        <p class="lede rise" style="--d:.75s">{home.hero.lede}</p>
+        <p class="lede rise" style="--d:.75s">
+          {heroLedeBefore}<span class="member-count">{site.memberCount}</span>{heroLedeAfter}
+        </p>
         <div class="heroctas rise" style="--d:.9s">
           <div>
             <a class="btn btn-ember" href={home.hero.primaryCta.href}>{home.hero.primaryCta.label}</a>
@@ -66,8 +81,7 @@ const faqSchema = {
         <div class="proof rise" style="--d:1.05s">
           <img class="avatars" src="/member-avatars.webp" alt="Orange Labs members" width="120" height="45" />
           <p>
-            <strong><span id="cnt" data-target={memberCountNumber}>{memberCountNumber}</span>+ marketers</strong>{' '}
-            already inside, building with AI
+            {proofBefore}<strong><span class="member-count">{site.memberCount}</span></strong>{proofAfter}
           </p>
         </div>
       </div>
@@ -87,7 +101,7 @@ const faqSchema = {
   <Ticker />
 
   <section class="on-light">
-    <div class="wrap split">
+    <div class="wrap split text-wide">
       <div class={home.whatIs.photoContain ? 'photo contain ticks rv' : 'photo ticks rv'}>
         <img src={home.whatIs.photo} alt={home.whatIs.photoAlt} loading="lazy" />
       </div>
@@ -96,7 +110,7 @@ const faqSchema = {
         <h2>{home.whatIs.heading}</h2>
         <p class="lede" style="margin-top:1.2rem">{home.whatIs.body}</p>
         <ul class="checks">
-          {home.whatIs.checks.map((check) => <li>{check}</li>)}
+          {home.whatIs.checks.map((check) => <li set:html={check} />)}
         </ul>
       </div>
     </div>
@@ -154,7 +168,7 @@ const faqSchema = {
             <div class="step ticks rv" style={`--i:${i}`}>
               <div class="snum">Step 0{i + 1}</div>
               <h3>{step.title}</h3>
-              <p set:html={withCount(step.html)} />
+              <p set:html={step.html} />
             </div>
           ))
         }
@@ -168,7 +182,7 @@ const faqSchema = {
         <div class="eyebrow">{home.features.eyebrow}</div>
         <h2>{home.features.heading}</h2>
       </div>
-      <div class="cards4">
+      <div class="cards5">
         {
           home.features.cards.map((card, i) => (
             <div class="fcard rv" style={`--i:${i}`}>
@@ -184,44 +198,23 @@ const faqSchema = {
   </section>
 
   <section class="on-light">
-    <div class="wrap split">
-      <div class="rv">
-        <div class="eyebrow">{home.origin.eyebrow}</div>
-        <h2>{home.origin.heading}</h2>
-        <div class="stars">{home.origin.stars}</div>
-        <p class="lede">
-          {home.origin.ledeBefore}
-          <a href={home.origin.ledeLinkHref} target="_blank" rel="noopener noreferrer">
-            {home.origin.ledeLinkText}
-          </a>
-          {home.origin.ledeAfter}
-        </p>
-        <ul class="checks">
-          {home.origin.checks.map((check) => <li>{check}</li>)}
-        </ul>
-        <div style="margin-top:2rem">
-          <a class="btn btn-ember" href={home.origin.cta.href}>{home.origin.cta.label}</a>
-        </div>
+    <div class="wrap">
+      <div class="centerhead rv">
+        <div class="eyebrow">{home.builtInLab.eyebrow}</div>
+        <h2>{home.builtInLab.heading}</h2>
       </div>
-      <div class="photo ticks rv" style="--i:1">
-        <img src={home.origin.photo} alt={home.origin.photoAlt} loading="lazy" />
-      </div>
-    </div>
-  </section>
-
-  <section class="on-light">
-    <div class="wrap split">
-      <div class="photo ticks rv">
-        <img src={home.founder.photo} alt={home.founder.photoAlt} loading="lazy" />
-      </div>
-      <div class="rv" style="--i:1">
-        <div class="eyebrow">{home.founder.eyebrow}</div>
-        <h2>{home.founder.heading}</h2>
-        {home.founder.paragraphs.map((p) => <p class="lede" style="margin-top:1.2rem">{p}</p>)}
-        <p class="founder-byline">
-          <strong>{home.founder.name}</strong> · {home.founder.role}
-        </p>
-        <p class="founder-creds">{home.founder.credentials}</p>
+      <div class="labgrid">
+        {
+          home.builtInLab.members.map((m, i) => (
+            <div class="labmember rv" style={`--i:${i}`}>
+              <img src={m.photo} alt={m.name} width="72" height="72" loading="lazy" />
+              <div>
+                <h3>{m.name}</h3>
+                <p>{m.built}</p>
+              </div>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -246,21 +239,56 @@ const faqSchema = {
 
   <section class="on-light">
     <div class="wrap">
-      <div class="centerhead rv">
-        <div class="eyebrow">{home.results.eyebrow}</div>
-        <h2>{home.results.heading}</h2>
+      <div class="centerhead rv" style="margin-bottom: 0">
+        <div class="eyebrow">{home.whyMembership.eyebrow}</div>
+        <h2>{home.whyMembership.heading}</h2>
+        <p class="lede" style="margin: 1.2rem auto 0">{home.whyMembership.paragraph1}</p>
       </div>
-      <div class="quotecard ticks rv">
-        <div>
-          <blockquote>{home.results.quote}</blockquote>
-          <p class="who">
-            <img class="whoavatar" src={home.results.avatar} alt={home.results.who} width="40" height="40" />
-            <span><strong>{home.results.who}</strong> · {home.results.whoDetail}</span>
-          </p>
+    </div>
+  </section>
+
+  <section class="on-light">
+    <div class="wrap split">
+      <div class="rv">
+        <div class="eyebrow">{home.origin.eyebrow}</div>
+        <h2>{home.origin.heading}</h2>
+        <p class="lede" style="margin-top:1.2rem">
+          {home.origin.paragraphBefore}
+          <a href={home.origin.linkHref} target="_blank" rel="noopener">
+            {home.origin.linkText}
+          </a>
+          {home.origin.paragraphAfter}
+        </p>
+        <p class="lede" style="margin-top:1.2rem">{home.origin.paragraph2}</p>
+        <div style="margin-top:2rem">
+          <a class="btn btn-ember" href={home.origin.cta.href}>{home.origin.cta.label}</a>
         </div>
-        <div class="photo">
-          <img src={home.results.image} alt={home.results.imageAlt} loading="lazy" />
-        </div>
+      </div>
+      <div class="photo ticks rv" style="--i:1">
+        <img src={home.origin.photo} alt={home.origin.photoAlt} loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="dotgrid">
+    <div class="wrap">
+      <p class="pullquote rv">{home.pullQuote.text}</p>
+    </div>
+  </section>
+
+  <section class="on-light">
+    <div class="wrap split">
+      <div class="photo ticks rv">
+        <img src={home.founder.photo} alt={home.founder.photoAlt} loading="lazy" />
+      </div>
+      <div class="rv" style="--i:1">
+        <div class="eyebrow">{home.founder.eyebrow}</div>
+        <h2>{home.founder.heading}</h2>
+        {home.founder.paragraphs.map((p) => <p class="lede" style="margin-top:1.2rem">{p}</p>)}
+        <p class="founder-byline">
+          <strong>{home.founder.name}</strong> · {home.founder.role}
+        </p>
+        <p class="founder-creds">{home.founder.credentials}</p>
       </div>
     </div>
   </section>
@@ -295,6 +323,18 @@ const faqSchema = {
     </div>
   </section>
 
+  <section class="on-light">
+    <div class="wrap" style="max-width: 40rem">
+      <div class="centerhead rv">
+        <div class="eyebrow">{home.notForYou.eyebrow}</div>
+        <h2 style="font-size: 1.6rem">{home.notForYou.heading}</h2>
+      </div>
+      <ul class="checks muted notforyou-card ticks rv">
+        {home.notForYou.items.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
   <section class="midnight">
     <div class="wrap">
       <div class="centerhead rv">
@@ -320,7 +360,9 @@ const faqSchema = {
   <div class="band">
     <div class="wrap">
       <h2 class="rv">{home.band.heading}</h2>
-      <p class="rv" style="--i:1">{withCount(home.band.sub)}</p>
+      <p class="rv" style="--i:1">
+        {bandSubBefore}<span class="member-count">{site.memberCount}</span>{bandSubAfter}
+      </p>
       <div class="rv" style="--i:2">
         <a class="btn btn-iron" href={home.band.cta.href}>{home.band.cta.label}</a>
         <p class="ctanote">{home.band.note}</p>

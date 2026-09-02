@@ -1,16 +1,17 @@
 {
   "meta": {
-    "title": "Orange Labs — The Community for Marketers Who Build With AI",
-    "description": "Stop talking about AI. Start building with it. Orange Labs is where 375+ marketers build real AI skills through hands-on experiments, expert guidance, and a clear signal through the noise."
+    "title": "Orange Labs: The Community for Marketers Who Build With AI",
+    "description": "Orange Labs is a working community of 372+ marketers who build AI tools together in the open. Live sessions, a growing library, and real feedback on what you ship."
   },
   "hero": {
     "statusPill": "Open enrollment · new members daily",
-    "headlineWords": ["The", "community", "for", "marketers", "who", "*build*", "with", "AI"],
-    "lede": "Real AI skills through hands-on experiments, expert guidance, and a clear signal through the noise. No hype, just shipping.",
-    "primaryCta": { "label": "Join the Community →", "href": "https://community.orangelabs.co/checkout/member" },
-    "primaryNote": "$49/mo · 7 days risk-free · cancel any time",
+    "headlineWords": ["Stop", "collecting", "AI", "tips.", "Start", "shipping", "*AI*", "*tools*."],
+    "lede": "Orange Labs is a working community of {{memberCount}} marketers who build with AI in the open. Bring the half-finished idea sitting in your drafts, get unstuck at the next live session, and post what you shipped.",
+    "primaryCta": { "label": "Join the Community. 7 days free →", "href": "https://community.orangelabs.co/checkout/member" },
+    "primaryNote": "$49/mo · cancel any time",
     "photo": "/hero-meetup.webp",
     "photoAlt": "Orange Labs community meetup",
+    "proofLine1": "{{memberCount}} marketers already inside, building with AI",
     "expCard": {
       "tag": "Exp.049 · Shipped",
       "line": "A working AI tool, built between two meetings",
@@ -22,9 +23,9 @@
     "heading": "Learn by building, not by watching.",
     "body": "Orange Labs is where marketers stop watching tutorials and start shipping real AI tools. Every feature is built around doing, with community, guidance, and accountability to keep you moving.",
     "checks": [
-      "Share wins, get feedback, and never build alone",
-      "Connect with marketers actively building with AI",
-      "Learn live: workshops, hackathons, and expert sessions"
+      "<strong>Post what you're stuck on.</strong> 82 members have shared a work in progress, and the thread is where most builds actually start.",
+      "<strong>Ship it live with the group.</strong> 47 hackathons, workshops, and office hours since October 2025.",
+      "<strong>Then post the win.</strong> 42 members have shared a finished tool, most of them with the code."
     ],
     "photo": "/10x-ai-assistant-workshop.webp",
     "photoAlt": "Build a 10x Marketing AI Assistant in Google Sheets, a live Orange Labs workshop",
@@ -43,7 +44,7 @@
       {
         "chip": "The struggle",
         "title": "Building in isolation",
-        "body": "AI moves fast and most of your peers are in the same boat. Figuring it out alone means slow progress and a lot of wasted time.",
+        "body": "Your company has one person figuring out AI, and it's you. Nobody to tell you your approach is wrong before you spend a week on it. Here, someone will tell you in an afternoon.",
         "answer": "Experience a community of builders who share what works, what doesn't, and what's next."
       },
       {
@@ -59,16 +60,16 @@
     "heading": "What members actually walk away with",
     "items": [
       {
-        "stat": "30+",
-        "label": "Members who've landed new jobs, clients, or opportunities through the Lab"
+        "stat": "47",
+        "label": "live sessions since October 2025: hackathons, workshops, office hours, coaching calls, and a book club."
       },
       {
-        "stat": "Direct DM access",
-        "label": "Straight answers from working AI experts, no generic advice"
+        "stat": "65",
+        "label": "tutorials, teardowns, and workflows in the library, with the prompts and the code."
       },
       {
-        "stat": "Real feedback",
-        "label": "Eyes on your actual work before you ship it, every week"
+        "stat": "42",
+        "label": "finished tools posted by members, from an ALT text generator that handled 27,000 images to a pipeline that structured 50,997 hotel guest notes."
       }
     ]
   },
@@ -77,16 +78,16 @@
     "heading": "Your first week in the lab",
     "items": [
       {
-        "title": "Join and introduce yourself",
-        "html": "Tell {{count}}+ builders who you are and what you want to build. <strong>You'll get replies the same day.</strong>"
+        "title": "👋 Introduce yourself",
+        "html": "Tell people what you're trying to build and what's in your way. <strong>81 members have.</strong>"
       },
       {
-        "title": "Pick your first experiment",
-        "html": "Grab a proven prompt or workflow from the Steal This library, or bring the half-built idea sitting in your drafts."
+        "title": "🧪 Pick your first experiment",
+        "html": "Steal a workflow from the library (65 and counting) or bring the half-built idea sitting in your drafts."
       },
       {
-        "title": "Ship it at the next hackathon",
-        "html": "Get unstuck live with the group, then post your win."
+        "title": "🚀 Ship it at the next session",
+        "html": "Get unstuck live with the group, then post what you made in Share Your Wins. <strong>42 people have gone before you.</strong>"
       }
     ]
   },
@@ -98,13 +99,13 @@
         "icon": "flask",
         "num": "Lab.01",
         "title": "Hackathon sessions",
-        "html": "Stop struggling alone. Bring your unfinished AI projects and get unstuck in real-time. <strong>What takes weeks to solve solo, we solve together in 90 minutes.</strong>"
+        "html": "Stop struggling alone. Bring your unfinished AI projects and get unstuck in real-time. <strong>What takes weeks to solve solo, we solve together in 90 minutes.</strong> Eight member hackathons run so far."
       },
       {
         "icon": "terminal",
         "num": "Lab.02",
         "title": "Hands-on AI implementation",
-        "html": "We don't do passive webinars. These are working sessions where you open your laptop, follow along, and <strong>leave with a finished asset, not just more notes.</strong>"
+        "html": "We don't do passive webinars. These are working sessions where you open your laptop, follow along, and <strong>leave with a finished asset, not just more notes.</strong> Recent ones: build your first MCP in 30 minutes, Claude Code in terminal, local LLMs, Git and GitHub, required statistics for marketers."
       },
       {
         "icon": "network",
@@ -116,31 +117,34 @@
         "icon": "library",
         "num": "Lab.04",
         "title": "The \"Steal This\" library",
-        "html": "Don't start from scratch. A curated vault of battle-tested prompts, Python scripts, and workflows you can <strong>copy/paste directly into your marketing operations.</strong>"
+        "html": "Don't start from scratch. 65 tutorials, prompts, Python scripts, and workflows, from vector embeddings and internal linking to building your first MCP. <strong>All with the code.</strong>"
+      },
+      {
+        "icon": "briefcase",
+        "num": "Lab.05",
+        "title": "The job board",
+        "html": "Updated regularly, with 90+ AI and marketing roles posted so far. Listings that include salary get priority, so you're not guessing what it pays. Recent ones ran $120k to $275k at Postman, JPMorgan Chase, Houzz, and Modern Treasury. <strong>Filled roles come down, so what's on the board is what's open.</strong>"
       }
     ]
   },
   "origin": {
     "eyebrow": "The origin story",
-    "heading": "Built by demand.",
-    "stars": "★★★★★ 4.8/5 by 700+ students",
-    "ledeBefore": "Graduates of the ",
-    "ledeLinkText": "top-rated Actionable AI course",
-    "ledeLinkHref": "https://maven.com/britney-muller/actionable-ai-for-marketers?ref=instructor",
-    "ledeAfter": " kept asking for:",
-    "checks": [
-      "A place to stay current on new tools and models",
-      "Somewhere to troubleshoot together",
-      "A space to share AI wins with people who get it",
-      "Working demos that don't require reading technical docs"
-    ],
+    "heading": "Where do we go from here?",
+    "paragraphBefore": "Orange Labs started as a question from students in my ",
+    "linkText": "Actionable AI For Marketers",
+    "linkHref": "https://maven.com/britney-muller/actionable-ai-for-marketers",
+    "paragraphAfter": " course: \"where do we go from here?\" I didn't have a great answer, so I built one.",
+    "paragraph2": "The Lab is its own thing now. You don't need to have taken the course, and most members haven't. It's just where the workshops, resources, and people ended up living, instead of scattered across bookmarks and DMs.",
     "cta": { "label": "Join the Community →", "href": "https://community.orangelabs.co/checkout/member" },
     "photo": "/lab-bench.webp",
     "photoAlt": "The Orange Labs bench"
   },
+  "pullQuote": {
+    "text": "I've spent over a decade inside the ML and AI world, watching how quietly it's designed to exclude: academically, financially, geographically, linguistically."
+  },
   "founder": {
     "eyebrow": "Community Founder",
-    "heading": "Real AI experience. Top-rated teaching.",
+    "heading": "A decade inside AI. Explained in plain marketing language.",
     "photo": "/britney-muller.webp",
     "photoAlt": "Britney Muller, founder of Orange Labs",
     "paragraphs": [
@@ -152,21 +156,34 @@
     "role": "Founder, Orange Labs",
     "credentials": "Marketing Manager, Hugging Face · AI Consultant, Amazon"
   },
+  "builtInLab": {
+    "eyebrow": "Member work",
+    "heading": "Built in the Lab",
+    "members": [
+      { "name": "Ian Lurie", "photo": "/ian-lurie.webp", "built": "An ALT text generator that handled 27,000 images" },
+      { "name": "Jenna Kobryn", "photo": "/jenna-kobryn.webp", "built": "Client-ready HTML SEO reports built with Claude, replacing a bloated tool stack" },
+      { "name": "Alex Adekola", "photo": "/alex-adekola.webp", "built": "A tool that converts PDF insurance estimates back into editable industry-standard files" },
+      { "name": "Thomas Hefke", "photo": "/thomas-hefke.webp", "built": "Turned 50,997 unstructured hotel guest notes into searchable fields" },
+      { "name": "Ryan Shelley", "photo": "/ryan-shelley.webp", "built": "Trained a model on 2,872 pages to predict Google rankings" },
+      { "name": "Natasha Post", "photo": "/natasha-post.webp", "built": "A pSEO rank tracker built with Claude, GSC, and Colab" },
+      { "name": "Martin Canchola", "photo": "/martin-avatar.webp", "built": "An AI co-pilot that grades client calls in real time. Built in 7 hours" },
+      { "name": "Niki Mosier", "photo": "/niki-mosier.webp", "built": "Turned three years of SEO deliverables into a product she sells" },
+      { "name": "Everett Sizemore", "photo": "/everett-sizemore.webp", "built": "A fact checker that finds contradictions across a content set" },
+      { "name": "Federico Pascual", "photo": "/federico-pascual.webp", "built": "Trained a robot arm to pick up objects with AI, zero robotics background" },
+      { "name": "Mike McPeak", "photo": "/mike-mcpeak.webp", "built": "Recreated a favorite competitor feature using Screaming Frog crawl data" },
+      { "name": "Ted Fay", "photo": "/ted-fay.webp", "built": "Found the fake brand sites quietly telling AI who your company is" }
+    ]
+  },
   "lukeTestimonial": {
     "eyebrow": "Member voices",
     "heading": "Hear it from a member",
     "youtubeId": "EnVjFp5xzuc",
-    "videoTitle": "Orange Labs member testimonial — Luke Gosha"
+    "videoTitle": "Orange Labs member testimonial, Luke Gosha"
   },
-  "results": {
-    "eyebrow": "Exp.047 · Real results",
-    "heading": "Members ship real tools",
-    "quote": "\"Built an entire SEO reporting tool on a Sunday afternoon.\"",
-    "avatar": "/martin-avatar.webp",
-    "who": "Martin Canchola",
-    "whoDetail": "Apartment SEO Co-Founder · no programming background",
-    "image": "/martin-demo.webp",
-    "imageAlt": "Martin Canchola's AI-powered SEO tool demo"
+  "whyMembership": {
+    "eyebrow": "Stay current",
+    "heading": "The Lab never stops moving.",
+    "paragraph1": "New workflows, new integrations, something new to try most weeks. You're never stuck with what you learned last quarter."
   },
   "pricing": {
     "eyebrow": "Membership",
@@ -177,13 +194,24 @@
     "risk": "Try 7 days risk-free",
     "best": "marketers who need ongoing support and a safe space to experiment.",
     "includes": [
-      "Safe lab environment with peer support",
-      "Real-time help from AI experts",
-      "Weekly hands-on live workshops",
-      "Resource library: templates and prompts",
-      "Curated AI news, minus the hype"
+      "47 live sessions so far: hackathons, workshops, and office hours",
+      "65+ tutorials and workflows in the library, with the code, growing weekly",
+      "42 member-built tools shared in What Are You Working On, and counting",
+      "Feedback on your actual work before you ship it",
+      "Curated AI news for marketers, hype filtered out",
+      "A regularly updated job board, salary-transparent listings prioritized"
     ],
-    "cta": { "label": "Join the Community", "href": "https://community.orangelabs.co/checkout/member" }
+    "cta": { "label": "Join the Community. 7 days free →", "href": "https://community.orangelabs.co/checkout/member" }
+  },
+  "notForYou": {
+    "eyebrow": "Exp.00 · A quick gut check",
+    "heading": "Not for you if",
+    "items": [
+      "You want someone to build it for you",
+      "You want a certificate",
+      "You want to be told AI will replace your job, or that it definitely won't",
+      "You're afraid to experiment, ship something messy, or get it wrong (totally normal, and exactly what we're here to help you push through)"
+    ]
   },
   "faq": {
     "eyebrow": "Field notes · FAQ",
@@ -195,18 +223,30 @@
       },
       {
         "q": "How much time does this take?",
-        "a": "As much or as little as you want. Weekly \"Quick AI Tips & Tricks\" land in your inbox, and you can drop into the Lab whenever you need support or want to see what other members are building."
+        "a": "As much or as little as you want. Biweekly \"Quick AI Tips & Tricks\" land in your inbox, and you can drop into the Lab whenever you need support or want to see what other members are building."
       },
       {
         "q": "What if it's not for me?",
         "a": "Try it for 7 days risk-free and cancel any time. No waitlist, no lock-in, no hard feelings."
+      },
+      {
+        "q": "Isn't this just another community that goes quiet?",
+        "a": "Fair question, and the honest answer is to go look. Every space shows the date of the last post. Take the seven free days, post the thing you're stuck on, and see what comes back. If it's dead in there, you've lost nothing."
+      },
+      {
+        "q": "I already use ChatGPT every day. What's different here?",
+        "a": "Using ChatGPT is prompting. This is about what you build around it: connecting it to your real data, putting it on a schedule, wrapping it in something your team can actually use. Members here have shipped rank trackers, an ALT text generator that handled 27,000 images, and a fact checker that finds contradictions across a content set. Not prompts. Tools."
+      },
+      {
+        "q": "How is this different from your course?",
+        "a": "The course is four weeks, cohort-based, with a syllabus and live classes. The community is ongoing, self-directed, and $49/mo. The course teaches you the foundations. The community is where you keep building after. You don't need one to join the other."
       }
     ]
   },
   "band": {
     "heading": "Let's fail fast, start messy & succeed together",
-    "sub": "Upskill with {{count}}+ other Marketers today",
-    "cta": { "label": "Join the Lab →", "href": "https://community.orangelabs.co/checkout/member" },
-    "note": "$49/mo · 7 days risk-free · cancel any time"
+    "sub": "{{memberCount}} marketers already building. Come make an ugly V1 with us.",
+    "cta": { "label": "Join the Community. 7 days free →", "href": "https://community.orangelabs.co/checkout/member" },
+    "note": "$49/mo · cancel any time"
   }
 }
