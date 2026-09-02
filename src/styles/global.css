@@ -138,12 +138,14 @@ nav.site .logo { height: 34px; width: auto }
 .hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 4rem; align-items: center; position: relative }
 .hero .lede { margin: 1.4rem 0 2rem }
 .heroctas { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-start; margin-bottom: 2.4rem }
+.heroctas .btn-ember { display: flex; width: 100%; justify-content: center; box-shadow: 0 8px 30px rgba(241, 87, 34, .45) }
 .ctanote { margin: .6rem 0 0; font-family: var(--mono); font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; color: var(--haze) }
 .band .ctanote { color: rgba(249, 249, 248, .85); margin-top: 1.3rem }
 .proof { display: flex; align-items: center; gap: 1rem }
 .avatars { height: 42px; width: auto; display: block }
 .proof p { margin: 0; font-size: .85rem; color: var(--haze) }
 .proof strong { color: var(--bone); font-variant-numeric: tabular-nums }
+.member-count { font-variant-numeric: tabular-nums }
 .bench { position: relative }
 .bench .ph { min-height: 380px }
 .expcard { position: absolute; bottom: -24px; left: -28px; background: var(--iron-card); border: 1px solid rgba(249, 249, 248, .12); border-radius: 12px; padding: 1rem 1.2rem; box-shadow: 0 18px 44px rgba(0, 0, 0, .4); max-width: 270px }
@@ -157,11 +159,25 @@ nav.site .logo { height: 34px; width: auto }
 section { padding: 5.5rem 0 }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center }
 @media (max-width: 860px) { .split { grid-template-columns: 1fr } }
+.split.text-wide { grid-template-columns: .75fr 1.25fr }
+@media (max-width: 860px) { .split.text-wide { grid-template-columns: 1fr } }
 .on-light .eyebrow { color: #c8461a }
 .midnight { background: var(--midnight) }
 .checks { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: .7rem }
 .checks li { display: flex; gap: .7em; font-size: .95rem }
 .checks li::before { content: "→"; color: var(--ember); font-weight: 600; flex: none }
+.checks.muted li::before { content: "–"; color: var(--haze) }
+.checks.muted li { color: #44474c; font-size: 1.15rem; font-weight: 500 }
+.checks.muted a { color: var(--ember); text-decoration: underline; text-underline-offset: .2em }
+.notforyou-card {
+  border: 1.5px dashed rgba(43, 46, 51, .3);
+  border-radius: 14px;
+  padding: 2.2rem 2.4rem;
+  margin-top: 0;
+  rotate: -.35deg;
+  background-image: radial-gradient(rgba(43, 46, 51, .1) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
 .centerhead { text-align: center; max-width: 52rem; margin: 0 auto 3.2rem }
 .centerhead .eyebrow { justify-content: center }
 .centerhead .eyebrow::after { content: ""; width: 26px; height: 1px; background: var(--ember); flex: none }
@@ -186,8 +202,9 @@ section { padding: 5.5rem 0 }
 .step p strong { color: var(--iron) }
 
 /* Feature cards */
-.cards4 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem }
-@media (max-width: 760px) { .cards4 { grid-template-columns: 1fr } }
+.cards5 { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.4rem }
+.cards5 .fcard { flex: 1 1 300px; max-width: 360px }
+@media (max-width: 760px) { .cards5 .fcard { flex: 1 1 100%; max-width: none } }
 .fcard { background: var(--iron-card); border: 1px solid rgba(249, 249, 248, .09); border-radius: 14px; padding: 2.1rem 2rem; position: relative }
 .fcard .num { font-family: var(--mono); font-size: .68rem; letter-spacing: .2em; color: var(--haze); opacity: .85 }
 .fcard h3 { color: var(--ember); font-size: 1.5rem; margin: .7rem 0 .55rem }
@@ -211,7 +228,7 @@ section { padding: 5.5rem 0 }
   background: var(--sandstone-card);
   color: var(--iron);
   border-radius: 16px;
-  max-width: 56rem;
+  max-width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -233,6 +250,7 @@ section { padding: 5.5rem 0 }
 .pricedetails ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: .7rem }
 .pricedetails ul li { display: flex; gap: .6em; font-size: .88rem; color: #44474c }
 .pricedetails ul li::before { content: "✓"; color: var(--ember); font-weight: 700; flex: none }
+.pricedetails .pricenote { margin: 1.3rem 0 0; font-size: .85rem; color: #5b5e63; font-style: italic }
 @media (max-width: 760px) {
   .pricecard { grid-template-columns: 1fr }
   .pricemain { border-right: none; border-bottom: 1px solid rgba(43, 46, 51, .12); padding: 2.4rem 1.8rem }
@@ -249,6 +267,30 @@ section { padding: 5.5rem 0 }
 /* Founder */
 .founder-byline { font-size: .95rem; margin: 1.6rem 0 .2rem }
 .founder-creds { font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; color: #5b5e63 }
+
+/* Pull quote */
+.pullquote {
+  position: relative;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding-top: 2.2rem;
+  font-family: var(--display);
+  font-weight: 600;
+  text-transform: none;
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  line-height: 1.35;
+  text-align: center;
+  color: var(--bone);
+}
+.pullquote::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 48px; height: 3px; background: var(--ember); border-radius: 2px }
+
+/* Built in the Lab */
+.labgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem 2.4rem }
+@media (max-width: 700px) { .labgrid { grid-template-columns: 1fr } }
+.labmember { display: flex; align-items: center; gap: 1rem }
+.labmember img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex: none }
+.labmember h3 { font-size: 1.05rem; text-transform: none; margin: 0 0 .25rem; color: var(--iron) }
+.labmember p { margin: 0; font-size: .88rem; color: #5b5e63 }
 
 /* Blog */
 .postgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem }
