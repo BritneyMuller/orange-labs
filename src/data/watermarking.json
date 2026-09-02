@@ -25,6 +25,7 @@
     "eyebrow": "Lab.03 · Try it yourself",
     "heading": "The tournament sampling simulator",
     "intro": "Type or paste anything below. Every word with a plausible alternative competes in a small tournament, seeded by your key and the words right before it. Change the key and watch every outcome change.",
+    "textareaHint": "Pretend this is text an AI just wrote, since that's what actually gets watermarked. Not a prompt you'd type to an AI, the output it would hand back.",
     "disclaimer": "Simulation. This runs the same mechanism on a demo key, not Anthropic's key. It cannot detect real Claude text.",
     "mechanismNote": "The real SynthID-Text samples candidates from the model's full probability distribution over its vocabulary and runs a multi-layer knockout tournament. This demo swaps in a small, fixed dictionary of 2 to 5 alternatives per word, so you can see the mechanism run in a browser.",
     "samples": [
@@ -118,8 +119,8 @@
         "citeLabel": "Anthropic"
       },
       {
-        "heading": "The quality cost was tiny",
-        "body": "Google measured a 0.01% difference in thumbs-up rate across roughly 20 million Gemini responses when SynthID-Text was turned on, a gap small enough to be statistically insignificant.",
+        "heading": "The quality cost was tiny, worth a caveat",
+        "body": "Google measured a 0.01% difference in thumbs-up rate across roughly 20 million Gemini responses when SynthID-Text was turned on, a gap small enough to be statistically insignificant. Worth noting: thumbs-up rate is a coarse, self-selected signal. Most responses never get rated at all, and it's not built to catch subtle shifts in word choice.",
         "citeHref": "https://www.nature.com/articles/s41586-024-08025-4",
         "citeLabel": "Nature"
       }
@@ -136,12 +137,14 @@
     }
   },
   "newsletter": {
+    "eyebrow": "Exp.07 · Stay in the loop",
     "heading": "Get the next one before everyone else",
     "sub": "Plain English breakdowns of what's actually changing in AI and search, built for marketers. No hype, no hallucinated stats.",
     "formUid": "4c2e2772",
     "consent": "Occasional emails about AI and search. Unsubscribe anytime."
   },
   "joinLab": {
+    "eyebrow": "Lab.08 · Come build",
     "heading": "Come build this stuff with us",
     "sub": "Orange Labs is where marketers learn AI by actually using it. Workshops, teardowns, and a community that ships. Finished beats perfect. Mess welcomed in the lab.",
     "cta": "Join the Lab",
@@ -173,7 +176,7 @@
       },
       {
         "q": "Does watermarking hurt Claude's output quality?",
-        "a": "Google's own measurement, across roughly 20 million Gemini responses using the same SynthID-Text approach, found a 0.01% difference in thumbs-up rate, small enough to be statistically insignificant. There's no added cost, no added tokens, and no meaningful speed impact.",
+        "a": "Google's own measurement, across roughly 20 million Gemini responses using the same SynthID-Text approach, found a 0.01% difference in thumbs-up rate, small enough to be statistically insignificant. Take that with a grain of salt though: thumbs-up rate is a blunt, self-selected metric, not built to catch subtle word-choice effects. There's no added cost, no added tokens, and no meaningful speed impact.",
         "citeHref": "https://www.nature.com/articles/s41586-024-08025-4",
         "citeLabel": "Nature"
       },

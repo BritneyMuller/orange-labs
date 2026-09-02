@@ -96,6 +96,7 @@ const articleSchema = {
         detectorStates={wm.detector.states}
         disclaimer={wm.simulator.disclaimer}
         mechanismNote={wm.simulator.mechanismNote}
+        textareaHint={wm.simulator.textareaHint}
         wrongKeyLabel={wm.detector.wrongKeyLabel}
         wrongKeyNote={wm.detector.wrongKeyNote}
       />
@@ -122,36 +123,6 @@ const articleSchema = {
       </ul>
     </div>
   </section>
-
-  <section class="midnight">
-    <div class="wrap">
-      <div class="ctapair">
-        <div class="ctacard ctacard-primary" data-cta="newsletter-watermarking">
-          <h3>{wm.newsletter.heading}</h3>
-          <p>{wm.newsletter.sub}</p>
-          <div class="newsletter" data-is-popup="false" data-circle-form-uid={wm.newsletter.formUid}></div>
-          <p class="consent">{wm.newsletter.consent}</p>
-        </div>
-        <div class="ctacard ctacard-secondary" data-cta="join-lab-watermarking">
-          <h3>{wm.joinLab.heading}</h3>
-          <p>{wm.joinLab.sub}</p>
-          <a class="btn btn-ghost" href={wm.joinLab.href} target="_blank" rel="noopener" data-cta="join-lab-watermarking-button">
-            {wm.joinLab.cta} →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <script is:inline>
-    if (!window.circleFormsScriptLoaded) {
-      window.circleFormsScriptLoaded = true;
-      const script = document.createElement('script');
-      script.src = 'https://community.orangelabs.co/external/form-embeds.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    }
-  </script>
 
   <section class="on-light">
     <div class="wrap">
@@ -227,20 +198,32 @@ const articleSchema = {
   <section class="on-light">
     <div class="wrap">
       <div class="ctapair">
-        <div class="ctacard ctacard-primary" style="background: var(--iron); color: var(--bone)" data-cta="newsletter-watermarking-footer">
+        <div class="ctacard ctacard-primary" data-cta="newsletter-watermarking">
+          <div class="eyebrow">{wm.newsletter.eyebrow}</div>
           <h3>{wm.newsletter.heading}</h3>
           <p>{wm.newsletter.sub}</p>
           <div class="newsletter" data-is-popup="false" data-circle-form-uid={wm.newsletter.formUid}></div>
           <p class="consent">{wm.newsletter.consent}</p>
         </div>
-        <div class="ctacard ctacard-secondary" style="border-color: rgba(43, 46, 51, .3)" data-cta="join-lab-watermarking-footer">
+        <div class="ctacard ctacard-secondary" data-cta="join-lab-watermarking">
+          <div class="eyebrow">{wm.joinLab.eyebrow}</div>
           <h3>{wm.joinLab.heading}</h3>
           <p>{wm.joinLab.sub}</p>
-          <a class="btn btn-ghost" href={wm.joinLab.href} target="_blank" rel="noopener" data-cta="join-lab-watermarking-footer-button">
+          <a class="btn btn-ember" href={wm.joinLab.href} target="_blank" rel="noopener" data-cta="join-lab-watermarking-button">
             {wm.joinLab.cta} →
           </a>
         </div>
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    if (!window.circleFormsScriptLoaded) {
+      window.circleFormsScriptLoaded = true;
+      const script = document.createElement('script');
+      script.src = 'https://community.orangelabs.co/external/form-embeds.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  </script>
 </BaseLayout>

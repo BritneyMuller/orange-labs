@@ -380,6 +380,7 @@ footer.site .blurb { font-size: .85rem; color: var(--haze); max-width: 26em }
 .samplechip span { color: var(--haze); margin-left: .5em }
 
 .wmlabel { display: block; font-family: var(--mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--haze); margin-bottom: .5rem }
+.wmhint { font-size: .82rem; color: var(--haze); margin: 0 0 .6rem; max-width: 42em }
 .wmtextarea, .wminput {
   width: 100%;
   font-family: var(--body);
@@ -469,12 +470,25 @@ footer.site .blurb { font-size: .85rem; color: var(--haze); max-width: 26em }
 .ctapair { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.6rem; align-items: stretch }
 @media (max-width: 860px) { .ctapair { grid-template-columns: 1fr } }
 .ctacard { border-radius: 16px; padding: 2.2rem; display: flex; flex-direction: column }
-.ctacard-primary { background: var(--iron-card); border: 1px solid rgba(249, 249, 248, .1) }
-.ctacard-secondary { background: transparent; border: 1.5px dashed rgba(249, 249, 248, .28) }
 .ctacard h3 { font-size: 1.5rem; margin-bottom: .6rem }
-.ctacard p { color: var(--haze); font-size: .92rem; margin: 0 0 1.2rem }
-.ctacard .consent { font-size: .76rem; color: var(--haze); margin-top: .8rem }
+.ctacard p { font-size: .92rem; margin: 0 0 1.2rem }
+.ctacard .eyebrow { margin-bottom: .9rem }
+.ctacard .consent { font-size: .76rem; margin-top: .8rem }
 .ctacard .btn { align-self: flex-start; margin-top: auto }
+
+.ctacard-primary { background: var(--iron); color: var(--bone); border: 1px solid rgba(249, 249, 248, .1) }
+.ctacard-primary p, .ctacard-primary .consent { color: var(--haze) }
+.ctacard-primary .eyebrow { color: var(--ember) }
+
+.ctacard-secondary {
+  background: var(--sandstone-card);
+  color: var(--iron);
+  border: 1.5px dashed rgba(43, 46, 51, .3);
+  background-image: radial-gradient(rgba(43, 46, 51, .08) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.ctacard-secondary p, .ctacard-secondary .consent { color: #5b5e63 }
+.ctacard-secondary .eyebrow { color: #c8461a }
 
 @media (prefers-reduced-motion: reduce) {
   .wmword, .samplechip, .speedbtn { transition: none }

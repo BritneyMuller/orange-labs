@@ -37,6 +37,7 @@ interface Props {
   detectorStates: { likely: string; inconclusive: string; 'no-signal': string };
   disclaimer: string;
   mechanismNote: string;
+  textareaHint: string;
   wrongKeyLabel: string;
   wrongKeyNote: string;
 }
@@ -87,7 +88,7 @@ function DetectorNumbers({ score }: { score: DetectorResult }) {
       </div>
       <div>
         <dt>z</dt>
-        <dd>{Number.isFinite(score.z) ? score.z.toFixed(2) : '—'}</dd>
+        <dd>{Number.isFinite(score.z) ? score.z.toFixed(2) : 'n/a'}</dd>
       </div>
     </dl>
   );
@@ -174,6 +175,7 @@ export default function WatermarkLab({
   detectorStates,
   disclaimer,
   mechanismNote,
+  textareaHint,
   wrongKeyLabel,
   wrongKeyNote,
 }: Props) {
@@ -305,6 +307,7 @@ export default function WatermarkLab({
         <label className="wmlabel" htmlFor="wm-text">
           Your text
         </label>
+        <p className="wmhint">{textareaHint}</p>
         <textarea
           id="wm-text"
           className="wmtextarea"
