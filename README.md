@@ -37,6 +37,16 @@ npm run build    # must pass before anything merges
 
 Branch per change, PR to `main`. Previews deploy per PR; `main` deploys to production.
 
+## The watermarking simulator (`/watermarking`)
+
+An interactive page explaining how Claude's SynthID-Text watermark works, by running a simplified version of the same mechanism live in the browser.
+
+**What it does:** implements the real algorithm's shape (tournament sampling over candidate words, seeded by a key plus the preceding few words of context, with repeated-context masking) in a deterministic, dependency-free module at `src/lib/watermark.ts`. No `Math.random`, no network calls: the same text and key always produce the same output, which the tests in `src/lib/watermark.test.ts` verify directly.
+
+**What it does not do:** detect real Claude output. It runs on a demo key you can see and edit, against a small hand-built synonym dictionary (`src/data/synonyms.json`) instead of a model's actual vocabulary distribution. Every interactive module says so. It is a teaching tool, not a detector, and it should never be described, linked, or repurposed as one.
+
+**Newsletter signups** on this page go through a dedicated Circle form embed (its own form UID, matching the pattern in `Footer.astro`), not a custom API route. That gives per-page attribution with no admin token anywhere near the client and nothing that can fail silently in production.
+
 ## What you won't find here (on purpose)
 
 Open source doesn't mean oversharing. This repo deliberately excludes:

@@ -336,3 +336,146 @@ footer.site .blurb { font-size: .85rem; color: var(--haze); max-width: 26em }
 .fcol a { display: block; font-size: .88rem; color: var(--bone); opacity: .85; padding: .28rem 0 }
 .fcol a:hover { color: var(--ember); opacity: 1 }
 .fbottom { border-top: 1px solid rgba(249, 249, 248, .08); padding-top: 1.6rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--haze) }
+
+/* ============ Watermarking page ============ */
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0 }
+
+.sixty { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; max-width: 46rem; margin-inline: auto }
+.sixty li { display: flex; gap: 1rem; font-size: 1rem; line-height: 1.55; padding-bottom: 1.1rem; border-bottom: 1px solid rgba(43, 46, 51, .12) }
+.sixty li:last-child { border-bottom: none; padding-bottom: 0 }
+.sixty .sn { font-family: var(--mono); font-size: .78rem; color: var(--ember); flex: none; padding-top: .2rem }
+.citelink { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ember); text-decoration: underline; text-underline-offset: .2em; white-space: nowrap; margin-left: .5em }
+.on-light .citelink { color: #c8461a }
+
+.wmlab { background: var(--midnight); color: var(--bone); border-radius: 18px; padding: 2rem; border: 1px solid rgba(249, 249, 248, .08) }
+@media (max-width: 700px) { .wmlab { padding: 1.3rem } }
+
+.simdisclaimer {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  line-height: 1.5;
+  color: var(--bone);
+  background: rgba(241, 87, 34, .14);
+  border: 1px solid rgba(241, 87, 34, .4);
+  border-radius: 10px;
+  padding: .8rem 1.1rem;
+  margin: 0 0 1.6rem;
+}
+
+.samplerow { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1rem }
+.samplechip {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  color: var(--bone);
+  background: rgba(249, 249, 248, .06);
+  border: 1px solid rgba(249, 249, 248, .18);
+  border-radius: 999px;
+  padding: .5em 1em;
+  cursor: pointer;
+  transition: background .2s var(--ease), border-color .2s var(--ease);
+}
+.samplechip:hover, .samplechip:focus-visible { background: rgba(241, 87, 34, .16); border-color: rgba(241, 87, 34, .5) }
+.samplechip span { color: var(--haze); margin-left: .5em }
+
+.wmlabel { display: block; font-family: var(--mono); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--haze); margin-bottom: .5rem }
+.wmtextarea, .wminput {
+  width: 100%;
+  font-family: var(--body);
+  font-size: .98rem;
+  color: var(--bone);
+  background: rgba(249, 249, 248, .05);
+  border: 1px solid rgba(249, 249, 248, .2);
+  border-radius: 10px;
+  padding: .85rem 1rem;
+  resize: vertical;
+}
+.wmtextarea:focus, .wminput:focus { outline: 2px solid var(--ember); outline-offset: 1px; border-color: var(--ember) }
+.wmlab-row { display: grid; grid-template-columns: 2fr 1fr; gap: 1.4rem; margin-top: 1.2rem }
+@media (max-width: 700px) { .wmlab-row { grid-template-columns: 1fr } }
+.speedgroup { display: flex; border: 1px solid rgba(249, 249, 248, .2); border-radius: 10px; overflow: hidden }
+.speedbtn { flex: 1; background: transparent; color: var(--haze); font-size: .85rem; font-weight: 600; padding: .7em .5em; cursor: pointer; transition: background .2s var(--ease), color .2s var(--ease) }
+.speedbtn-active { background: var(--ember); color: var(--bone) }
+.wmlab-actions { display: flex; gap: 1rem; align-items: center; margin-top: 1.4rem }
+
+.wmlab-stage { display: grid; grid-template-columns: 1fr 320px; gap: 1.8rem; margin-top: 2rem; align-items: start }
+@media (max-width: 900px) { .wmlab-stage { grid-template-columns: 1fr } }
+.wmpanel-label { font-family: var(--mono); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--haze); margin: 0 0 .6rem }
+.wmstream { font-family: var(--body); font-size: 1.15rem; line-height: 2.1; margin: 0 }
+.wmword { font: inherit; border: none; background: none; padding: .05em .15em; border-radius: 4px; cursor: pointer; color: var(--bone) }
+.wmword-fixed { color: var(--haze) }
+.wmword-win { color: var(--ember); font-weight: 600 }
+.wmword-active { outline: 1.5px solid rgba(241, 87, 34, .6); outline-offset: 1px }
+.wmword-pending { color: rgba(249, 249, 248, .3); cursor: default }
+.wmword:hover, .wmword:focus-visible { background: rgba(249, 249, 248, .1) }
+
+.bracket { background: var(--midnight-deep); border-radius: 12px; padding: 1.3rem 1.4rem; margin-top: .6rem }
+.bracket-fixed .bracket-word { font-size: 1.05rem; font-weight: 600; margin: 0 0 .4rem }
+.bracket-note { font-size: .85rem; color: var(--haze); margin: 0 }
+.bracket-context, .bracket-seed { font-family: var(--mono); font-size: .74rem; color: var(--haze); margin: 0 0 .3rem }
+.bracket-context span { color: var(--bone) }
+.bracket-rounds { display: grid; gap: .6rem; margin: 1rem 0 }
+.bracket-round { display: flex; flex-wrap: wrap; gap: .6rem }
+.bracket-match { display: inline-flex; align-items: center; gap: .5em; font-family: var(--mono); font-size: .76rem; background: rgba(249, 249, 248, .05); border-radius: 8px; padding: .4em .7em }
+.bm-word { color: var(--haze) }
+.bm-word em { font-style: normal; opacity: .8; margin-left: .3em }
+.bm-win { color: var(--ember); font-weight: 700 }
+.bm-vs { color: rgba(249, 249, 248, .4) }
+.bm-bye { color: rgba(249, 249, 248, .4); font-style: italic }
+.bracket-winner { margin: .6rem 0 0; font-size: .9rem }
+.bracket-winner strong { color: var(--ember) }
+.bracket-winner span { color: var(--haze); margin-left: .5em; font-family: var(--mono); font-size: .78rem }
+.mechanismnote { font-size: .8rem; font-style: italic; color: var(--haze); margin: 1.4rem 0 0; max-width: 50em }
+
+.wmsidebar { background: var(--midnight-deep); border-radius: 12px; padding: 1.3rem 1.4rem }
+.wmsidebar summary { font-family: var(--mono); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--haze); cursor: pointer; margin-bottom: .9rem }
+.wmstat { display: flex; justify-content: space-between; align-items: baseline; font-size: .85rem; padding: .5rem 0; border-bottom: 1px solid rgba(249, 249, 248, .08) }
+.wmstat span { color: var(--haze) }
+.wmstat strong { font-variant-numeric: tabular-nums; color: var(--bone) }
+
+.histogram { margin-top: 1.2rem }
+.histogram-bars { position: relative; display: flex; align-items: flex-end; gap: 3px; height: 64px; border-bottom: 1px solid rgba(249, 249, 248, .15) }
+.histogram-bar { flex: 1; background: var(--ember); min-height: 2px; border-radius: 2px 2px 0 0 }
+.histogram-baseline { position: absolute; top: 0; bottom: 0; width: 0; border-left: 1px dashed var(--haze) }
+.histogram-labels { display: flex; justify-content: space-between; font-family: var(--mono); font-size: .62rem; color: var(--haze); margin-top: .4rem }
+.histogram-baseline-label { position: absolute; left: 50%; transform: translateX(-50%) }
+.histogram-labels { position: relative }
+
+.detectorpanel { background: var(--midnight-deep); border-radius: 14px; padding: 1.6rem 1.8rem; margin-top: 1.8rem }
+.detectorhead { display: flex; flex-wrap: wrap; align-items: center; gap: 1.4rem }
+.dstate { font-family: var(--mono); font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; border-radius: 999px; padding: .5em 1.1em }
+.dstate-likely { background: var(--ember); color: var(--bone) }
+.dstate-no { background: rgba(249, 249, 248, .1); color: var(--haze) }
+.dstate-inc { border: 1px solid rgba(249, 249, 248, .3); color: var(--bone) }
+.dnums { display: flex; gap: 1.6rem; margin: 0 }
+.dnums div { display: flex; flex-direction: column }
+.dnums dt { font-family: var(--mono); font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--haze) }
+.dnums dd { margin: 0; font-variant-numeric: tabular-nums; font-weight: 600 }
+.wrongkeytoggle { display: flex; align-items: center; gap: .7em; margin-top: 1.2rem; font-size: .9rem; cursor: pointer }
+.wrongkeynote { font-size: .84rem; color: var(--haze); margin: .7rem 0 0; max-width: 42em }
+
+.stresstests { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; margin-top: 1.8rem }
+@media (max-width: 700px) { .stresstests { grid-template-columns: 1fr } }
+.stresstest { background: var(--midnight-deep); border-radius: 12px; padding: 1.3rem 1.4rem }
+.stressbtn-active { background: var(--ember); color: var(--bone); border-color: var(--ember) }
+.stresscaption { font-size: .84rem; color: var(--haze); margin: .7rem 0 0 }
+.stresscompare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(249, 249, 248, .1) }
+@media (max-width: 500px) { .stresscompare { grid-template-columns: 1fr } }
+.stresscompare .wmpanel-label { margin-bottom: .4rem }
+.stresscompare .dnums { flex-direction: column; gap: .3rem; margin-top: .5rem }
+.stresscompare .dnums div { flex-direction: row; justify-content: space-between }
+
+.ctapair { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.6rem; align-items: stretch }
+@media (max-width: 860px) { .ctapair { grid-template-columns: 1fr } }
+.ctacard { border-radius: 16px; padding: 2.2rem; display: flex; flex-direction: column }
+.ctacard-primary { background: var(--iron-card); border: 1px solid rgba(249, 249, 248, .1) }
+.ctacard-secondary { background: transparent; border: 1.5px dashed rgba(249, 249, 248, .28) }
+.ctacard h3 { font-size: 1.5rem; margin-bottom: .6rem }
+.ctacard p { color: var(--haze); font-size: .92rem; margin: 0 0 1.2rem }
+.ctacard .consent { font-size: .76rem; color: var(--haze); margin-top: .8rem }
+.ctacard .btn { align-self: flex-start; margin-top: auto }
+
+@media (prefers-reduced-motion: reduce) {
+  .wmword, .samplechip, .speedbtn { transition: none }
+}

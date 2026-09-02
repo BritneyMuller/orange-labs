@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WatermarkLab from '../components/watermark/WatermarkLab.tsx';
+import site from '../data/site.json';
+import wm from '../data/watermarking.json';
+
+const ogImageUrl = new URL(wm.meta.ogImage, site.url).toString();
+const buildDate = new Date().toISOString();
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: wm.faq.items.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: wm.hero.headline,
+  description: wm.meta.description,
+  image: ogImageUrl,
+  dateModified: buildDate,
+  author: { '@type': 'Person', name: 'Britney Muller' },
+  publisher: { '@type': 'Organization', name: site.name, logo: { '@type': 'ImageObject', url: `${site.url}/logos/orange-labs.png` } },
+};
+---
+
+<BaseLayout title={wm.meta.title} description={wm.meta.description}>
+  <Fragment slot="head">
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={wm.meta.ogImageAlt} />
+    <meta name="twitter:title" content={wm.meta.title} />
+    <meta name="twitter:description" content={wm.meta.description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <header class="hero dotgrid">
+    <div class="wrap" style="grid-template-columns: 1fr; max-width: 50rem; text-align: center; margin: 0 auto">
+      <div>
+        <div class="eyebrow" style="justify-content: center">{wm.hero.eyebrow}</div>
+        <h1>{wm.hero.headline}</h1>
+        <p class="lede" style="margin: 1.4rem auto 2rem; max-width: 42em">{wm.hero.sub}</p>
+        <a class="btn btn-ember" href="#simulator">{wm.hero.cta}</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="on-light">
+    <div class="wrap">
+      <div class="centerhead">
+        <div class="eyebrow">{wm.sixtySecond.eyebrow}</div>
+        <h2 style="font-size: 1.8rem">{wm.sixtySecond.heading}</h2>
+      </div>
+      <ol class="sixty">
+        {
+          wm.sixtySecond.items.map((item, i) => (
+            <li>
+              <span class="sn">{String(i + 1).padStart(2, '0')}</span>
+              <span>
+                {item.text}
+                {item.citeHref && (
+                  <a class="citelink" href={item.citeHref} target="_blank" rel="noopener">
+                    {item.citeLabel}
+                  </a>
+                )}
+              </span>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section id="simulator" class="midnight">
+    <div class="wrap">
+      <div class="centerhead">
+        <div class="eyebrow">{wm.simulator.eyebrow}</div>
+        <h2>{wm.simulator.heading}</h2>
+        <p class="lede" style="margin: 1.2rem auto 0">{wm.simulator.intro}</p>
+      </div>
+
+      <WatermarkLab
+        client:load
+        samples={wm.simulator.samples}
+        defaultKey={wm.simulator.defaultKey}
+        stressTests={wm.stressTest.tests}
+        sidebarLabels={wm.simulator.sidebarLabels}
+        detectorStates={wm.detector.states}
+        disclaimer={wm.simulator.disclaimer}
+        mechanismNote={wm.simulator.mechanismNote}
+        wrongKeyLabel={wm.detector.wrongKeyLabel}
+        wrongKeyNote={wm.detector.wrongKeyNote}
+      />
+
+      <div class="centerhead" style="margin-top: 4rem">
+        <div class="eyebrow">{wm.detector.eyebrow}</div>
+        <h3 style="font-size: 1.6rem; text-transform: uppercase; font-family: var(--display); font-weight: 700">{wm.detector.heading}</h3>
+        <p class="lede" style="margin: 1.2rem auto 0">{wm.detector.intro}</p>
+      </div>
+
+      <div class="centerhead" style="margin-top: 4rem; margin-bottom: 1.5rem">
+        <div class="eyebrow">{wm.stressTest.eyebrow}</div>
+        <h3 style="font-size: 1.6rem; text-transform: uppercase; font-family: var(--display); font-weight: 700">{wm.stressTest.heading}</h3>
+        <p class="lede" style="margin: 1.2rem auto 0">{wm.stressTest.intro}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="on-light">
+    <div class="wrap" style="max-width: 46rem">
+      <h3 style="font-size: 1.4rem; margin-bottom: 1.2rem">{wm.stressTest.meaning.heading}</h3>
+      <ul class="checks">
+        {wm.stressTest.meaning.items.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="midnight">
+    <div class="wrap">
+      <div class="ctapair">
+        <div class="ctacard ctacard-primary" data-cta="newsletter-watermarking">
+          <h3>{wm.newsletter.heading}</h3>
+          <p>{wm.newsletter.sub}</p>
+          <div class="newsletter" data-is-popup="false" data-circle-form-uid={wm.newsletter.formUid}></div>
+          <p class="consent">{wm.newsletter.consent}</p>
+        </div>
+        <div class="ctacard ctacard-secondary" data-cta="join-lab-watermarking">
+          <h3>{wm.joinLab.heading}</h3>
+          <p>{wm.joinLab.sub}</p>
+          <a class="btn btn-ghost" href={wm.joinLab.href} target="_blank" rel="noopener" data-cta="join-lab-watermarking-button">
+            {wm.joinLab.cta} →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    if (!window.circleFormsScriptLoaded) {
+      window.circleFormsScriptLoaded = true;
+      const script = document.createElement('script');
+      script.src = 'https://community.orangelabs.co/external/form-embeds.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+  </script>
+
+  <section class="on-light">
+    <div class="wrap">
+      <div class="centerhead">
+        <div class="eyebrow">{wm.context.eyebrow}</div>
+        <h2 style="font-size: 1.9rem">{wm.context.heading}</h2>
+      </div>
+      <div class="cards3">
+        {
+          wm.context.items.map((item) => (
+            <div class="pcard">
+              <h3>{item.heading}</h3>
+              <p>
+                {item.body}
+                {item.citeHref && (
+                  <a class="citelink" href={item.citeHref} target="_blank" rel="noopener">
+                    {item.citeLabel}
+                  </a>
+                )}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="centerhead" style="margin-top: 3.5rem; margin-bottom: 1.2rem">
+        <h3 style="font-size: 1.3rem">{wm.context.goDeeper.heading}</h3>
+      </div>
+      <ul class="checks" style="max-width: 40rem; margin-inline: auto">
+        {
+          wm.context.goDeeper.links.map((link) => (
+            <li>
+              <a href={link.href} target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: .2em">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+        <li>{wm.context.goDeeper.note}</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="midnight">
+    <div class="wrap">
+      <div class="centerhead">
+        <div class="eyebrow">{wm.faq.eyebrow}</div>
+        <h2>{wm.faq.heading}</h2>
+      </div>
+      <div class="faq">
+        {
+          wm.faq.items.map((item, i) => (
+            <details>
+              <summary>
+                <span class="qn">Q{String(i + 1).padStart(2, '0')}</span>
+                {item.q}
+              </summary>
+              <p>
+                {item.a}
+                {item.citeHref && (
+                  <a class="citelink" href={item.citeHref} target="_blank" rel="noopener">
+                    {item.citeLabel}
+                  </a>
+                )}
+              </p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="on-light">
+    <div class="wrap">
+      <div class="ctapair">
+        <div class="ctacard ctacard-primary" style="background: var(--iron); color: var(--bone)" data-cta="newsletter-watermarking-footer">
+          <h3>{wm.newsletter.heading}</h3>
+          <p>{wm.newsletter.sub}</p>
+          <div class="newsletter" data-is-popup="false" data-circle-form-uid={wm.newsletter.formUid}></div>
+          <p class="consent">{wm.newsletter.consent}</p>
+        </div>
+        <div class="ctacard ctacard-secondary" style="border-color: rgba(43, 46, 51, .3)" data-cta="join-lab-watermarking-footer">
+          <h3>{wm.joinLab.heading}</h3>
+          <p>{wm.joinLab.sub}</p>
+          <a class="btn btn-ghost" href={wm.joinLab.href} target="_blank" rel="noopener" data-cta="join-lab-watermarking-footer-button">
+            {wm.joinLab.cta} →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

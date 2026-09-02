@@ -10,6 +10,10 @@ export default defineConfig({
   site: 'https://orangelabs.co',
   integrations: [react(), sitemap()],
 
+  redirects: {
+    '/ai-watermarking': '/watermarking',
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },

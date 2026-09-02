@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "How AI Text Watermarking Works (Interactive Demo) | Orange Labs",
+    "description": "Claude now watermarks its text using Google DeepMind's SynthID-Text. Run the same tournament sampling mechanism yourself, word by word, and see how detection actually works.",
+    "ogImage": "/watermarking-page.jpg",
+    "ogImageAlt": "Orange Labs interactive demo: how AI text watermarking works, word by word"
+  },
+  "hero": {
+    "eyebrow": "Exp.051 · Interactive",
+    "headline": "Watch an AI watermark get written, one word at a time",
+    "sub": "Claude now watermarks its text using Google DeepMind's SynthID-Text. There are no hidden characters to strip. The watermark is the word choice itself. Here's the mechanism, running live on whatever you type.",
+    "cta": "Try the simulator"
+  },
+  "sixtySecond": {
+    "eyebrow": "Exp.00 · The 60-second version",
+    "heading": "If you only read four lines, read these",
+    "items": [
+      { "text": "Watermarking is centuries old. Two kinds: visible (logos on stock photos) and invisible (only software can see it)." },
+      { "text": "Anthropic rolled out the invisible kind for text in August 2026, using SynthID-Text.", "citeHref": "https://www.anthropic.com/news/claude-text-watermark", "citeLabel": "Anthropic" },
+      { "text": "It works on word choice, not hidden characters. Copy-pasting it anywhere changes nothing.", "citeHref": "https://www.nature.com/articles/s41586-024-08025-4", "citeLabel": "Nature" },
+      { "text": "Only Anthropic can currently check for it. A public detection API is forthcoming.", "citeHref": "https://www.anthropic.com/news/claude-text-watermark", "citeLabel": "Anthropic" }
+    ]
+  },
+  "simulator": {
+    "eyebrow": "Lab.03 · Try it yourself",
+    "heading": "The tournament sampling simulator",
+    "intro": "Type or paste anything below. Every word with a plausible alternative competes in a small tournament, seeded by your key and the words right before it. Change the key and watch every outcome change.",
+    "disclaimer": "Simulation. This runs the same mechanism on a demo key, not Anthropic's key. It cannot detect real Claude text.",
+    "mechanismNote": "The real SynthID-Text samples candidates from the model's full probability distribution over its vocabulary and runs a multi-layer knockout tournament. This demo swaps in a small, fixed dictionary of 2 to 5 alternatives per word, so you can see the mechanism run in a browser.",
+    "samples": [
+      {
+        "label": "Marketing copy",
+        "note": "high entropy",
+        "text": "Our team helps marketers grow with AI. We build fast, ship quick, and teach the whole process along the way."
+      },
+      {
+        "label": "A factual paragraph",
+        "note": "low entropy",
+        "text": "SynthID-Text was created by Google DeepMind and published in Nature in 2024. Anthropic uses it to watermark Claude's text."
+      },
+      {
+        "label": "A code snippet",
+        "note": "near-zero entropy",
+        "text": "function add(a, b) { return a + b; }"
+      }
+    ],
+    "defaultKey": "orange-labs-demo-key",
+    "speeds": ["Slow", "Normal", "Instant"],
+    "sidebarLabels": {
+      "processed": "Words processed",
+      "tournaments": "Tournaments run",
+      "skipped": "Words skipped as fixed",
+      "meanG": "Running mean g-value"
+    }
+  },
+  "detector": {
+    "eyebrow": "Lab.04 · The detector",
+    "heading": "Now check your own work",
+    "intro": "The detector looks at the same words your run just chose and asks: were these picked because of the key, or would any writer have picked them anyway?",
+    "wrongKeyLabel": "Run the detector with the wrong key",
+    "wrongKeyNote": "Same text, different key. If the score collapses to about 0.5, that's the whole point: the key is what makes the watermark readable, nothing else about the text does.",
+    "states": {
+      "likely": "Likely watermarked",
+      "inconclusive": "Inconclusive",
+      "no-signal": "No signal"
+    }
+  },
+  "stressTest": {
+    "eyebrow": "Lab.05 · Stress test",
+    "heading": "Try to break it yourself",
+    "intro": "Run the four transforms below on your watermarked output and watch the confidence readout before and after, side by side.",
+    "tests": [
+      {
+        "id": "copy-paste",
+        "label": "Copy-paste it",
+        "caption": "No hidden characters. Nothing to strip."
+      },
+      {
+        "id": "shorten",
+        "label": "Shorten to one sentence",
+        "caption": "Small samples score poorly. Your caption probably won't register."
+      },
+      {
+        "id": "light-edit",
+        "label": "Light edit (swap ~10% of words)",
+        "caption": "Light editing probably won't remove it."
+      },
+      {
+        "id": "full-rewrite",
+        "label": "Full rewrite",
+        "caption": "A complete rewrite where every word is replaced will."
+      }
+    ],
+    "meaning": {
+      "heading": "What this means for your team",
+      "items": [
+        "Factual and low-entropy writing carries less watermark. There are fewer word choices to work with.",
+        "When Claude only edits your draft, the watermark lives only in the words Claude changed.",
+        "A watermark means \"Claude touched this,\" not \"no human wrote this.\"",
+        "No watermark proves nothing at all. Absence of a signal isn't evidence of anything."
+      ]
+    }
+  },
+  "context": {
+    "eyebrow": "Exp.02 · Context and what's next",
+    "heading": "Why now, and what's still open",
+    "items": [
+      {
+        "heading": "Why now",
+        "body": "The EU AI Act's Code of Practice has roughly 190 signatories, so most model providers are building their own version of this.",
+        "citeHref": "https://www.anthropic.com/news/claude-text-watermark",
+        "citeLabel": "Anthropic"
+      },
+      {
+        "heading": "Images and files work differently",
+        "body": "Pictures and documents get C2PA content credentials in their metadata instead of a text watermark. That's a weaker guarantee, since metadata is easy to strip.",
+        "citeHref": "https://www.anthropic.com/news/claude-text-watermark",
+        "citeLabel": "Anthropic"
+      },
+      {
+        "heading": "The quality cost was tiny",
+        "body": "Google measured a 0.01% difference in thumbs-up rate across roughly 20 million Gemini responses when SynthID-Text was turned on.",
+        "citeHref": "https://www.nature.com/articles/s41586-024-08025-4",
+        "citeLabel": "Nature"
+      }
+    ],
+    "goDeeper": {
+      "heading": "Go deeper",
+      "links": [
+        { "label": "Anthropic's announcement", "href": "https://www.anthropic.com/news/claude-text-watermark" },
+        { "label": "The SynthID-Text paper in Nature", "href": "https://www.nature.com/articles/s41586-024-08025-4" },
+        { "label": "Google's SynthID documentation", "href": "https://deepmind.google/technologies/synthid/" },
+        { "label": "Reference implementation on GitHub", "href": "https://github.com/google-deepmind/synthid-text" }
+      ],
+      "note": "A production implementation ships in Hugging Face Transformers v4.46.0 and later."
+    }
+  },
+  "newsletter": {
+    "heading": "Get the next one before everyone else",
+    "sub": "Plain English breakdowns of what's actually changing in AI and search, built for marketers. No hype, no hallucinated stats.",
+    "formUid": "4c2e2772",
+    "consent": "Occasional emails about AI and search. Unsubscribe anytime."
+  },
+  "joinLab": {
+    "heading": "Come build this stuff with us",
+    "sub": "Orange Labs is where marketers learn AI by actually using it. Workshops, teardowns, and a community that ships. Finished beats perfect. Mess welcomed in the lab.",
+    "cta": "Join the Lab",
+    "href": "https://community.orangelabs.co"
+  },
+  "faq": {
+    "eyebrow": "Exp.06 · Questions",
+    "heading": "Questions people ask about this",
+    "items": [
+      {
+        "q": "Can you remove a Claude watermark by copy-pasting the text?",
+        "a": "No. There are no hidden characters, invisible Unicode, or metadata involved. The watermark is the specific words the model chose, and copying or pasting text doesn't change a single word, so it doesn't touch the signal at all."
+      },
+      {
+        "q": "How long does the text need to be for detection to work?",
+        "a": "Neither Anthropic nor Google publishes a minimum word count, but the pattern is consistent: longer passages give the detector more watermarked words to average over, which raises confidence. Very short snippets, like a one-line caption, generally won't carry enough signal to register."
+      },
+      {
+        "q": "Does it work on code?",
+        "a": "Barely, and that's expected. Code has exact syntax with very few interchangeable word choices, so there's little room to apply a word-choice watermark. Comments within code, and translations of text, carry a full watermark since they involve normal language choices.",
+        "citeHref": "https://www.anthropic.com/news/claude-text-watermark",
+        "citeLabel": "Anthropic"
+      },
+      {
+        "q": "Can it tell who wrote something, or which specific person or chat it came from?",
+        "a": "No. The watermark carries no identifying information. It cannot be traced to a user, an organization, or a specific conversation, and it can't confirm human authorship or identify other AI systems either.",
+        "citeHref": "https://www.anthropic.com/news/claude-text-watermark",
+        "citeLabel": "Anthropic"
+      },
+      {
+        "q": "Does watermarking hurt Claude's output quality?",
+        "a": "Google's own measurement, across roughly 20 million Gemini responses using the same SynthID-Text approach, found a 0.01% difference in thumbs-up rate. There's no added cost, no added tokens, and no meaningful speed impact.",
+        "citeHref": "https://www.nature.com/articles/s41586-024-08025-4",
+        "citeLabel": "Nature"
+      },
+      {
+        "q": "If Claude only edits my draft instead of writing it, does the watermark still apply?",
+        "a": "Only to the words Claude actually changed. If Claude lightly edits a paragraph you wrote, the watermark lives in those specific edits, which may be too few words to register with any confidence."
+      }
+    ]
+  }
+}
