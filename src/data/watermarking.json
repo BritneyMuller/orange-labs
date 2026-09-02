@@ -119,7 +119,7 @@
       },
       {
         "heading": "The quality cost was tiny",
-        "body": "Google measured a 0.01% difference in thumbs-up rate across roughly 20 million Gemini responses when SynthID-Text was turned on.",
+        "body": "Google measured a 0.01% difference in thumbs-up rate across roughly 20 million Gemini responses when SynthID-Text was turned on, a gap small enough to be statistically insignificant.",
         "citeHref": "https://www.nature.com/articles/s41586-024-08025-4",
         "citeLabel": "Nature"
       }
@@ -173,7 +173,7 @@
       },
       {
         "q": "Does watermarking hurt Claude's output quality?",
-        "a": "Google's own measurement, across roughly 20 million Gemini responses using the same SynthID-Text approach, found a 0.01% difference in thumbs-up rate. There's no added cost, no added tokens, and no meaningful speed impact.",
+        "a": "Google's own measurement, across roughly 20 million Gemini responses using the same SynthID-Text approach, found a 0.01% difference in thumbs-up rate, small enough to be statistically insignificant. There's no added cost, no added tokens, and no meaningful speed impact.",
         "citeHref": "https://www.nature.com/articles/s41586-024-08025-4",
         "citeLabel": "Nature"
       },

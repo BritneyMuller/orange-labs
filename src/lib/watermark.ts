@@ -8,6 +8,14 @@
  * dictionary (2-5 alternatives per word) so the mechanism is visible and
  * explorable in a browser. No network calls, no Math.random, fully deterministic
  * given the same (text, key, dictionary) inputs.
+ *
+ * The 4-word context window isn't an arbitrary UI choice: Dathathri et al.,
+ * "Scalable watermarking for identifying large language model outputs",
+ * Nature 634 (2024), confirms the paper's own sliding-window seed generator
+ * uses context length H = 4 for all of its reported experiments. Repeated-
+ * context masking below mirrors the same paper's fix for repeated windows,
+ * simplified to "seen anywhere earlier in this run" rather than the paper's
+ * tunable K-window history parameter.
  */
 
 export type Dictionary = Record<string, string[]>;
