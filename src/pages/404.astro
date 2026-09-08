@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page not found — Orange Labs"
+  description="This experiment didn't ship. Find your way back to Orange Labs."
+>
+  <section class="hero dotgrid" style="min-height: 68vh; display: flex; align-items: center">
+    <div class="wrap" style="text-align: center; max-width: 38rem; margin: 0 auto">
+      <div class="status rise" style="--d:.05s; margin: 0 auto 1.6rem; width: fit-content">
+        <span class="dot" style="background: var(--ember); box-shadow: 0 0 0 0 rgba(241,87,34,.5)"></span>EXP.404 · DIDN'T SHIP
+      </div>
+      <h1 class="rise" style="--d:.12s">This one <em>fizzled</em>.</h1>
+      <p class="lede rise" style="--d:.2s; margin: 1.4rem auto 2rem">
+        Wrong link, removed page, or an experiment that never launched (hey, it happens! Try again).
+      </p>
+      <div class="heroctas rise" style="--d:.28s; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap">
+        <a class="btn btn-ember" href="/">Back to the Lab</a>
+        <a class="btn btn-ghost" href="/blog">Read the Blog</a>
+        <a class="btn btn-ghost" href="/#pricing">See Pricing</a>
+      </div>
+      <p class="rise" style="--d:.36s; margin-top: 2.6rem; font-size: .85rem; color: var(--haze); font-style: italic">
+        🧪 "As much as talent counts, effort counts twice." --Angela Duckworth
+      </p>
+    </div>
+  </section>
+</BaseLayout>
