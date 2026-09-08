@@ -21,11 +21,11 @@
   "whatIs": {
     "eyebrow": "What is Orange Labs?",
     "heading": "Learn by building, not by watching.",
-    "body": "Orange Labs is where marketers stop watching tutorials and start shipping real AI tools. Every feature is built around doing, with community, guidance, and accountability to keep you moving.",
+    "body": "Orange Labs is where marketers stop consuming how-tos and start putting hands to keyboard. Every lab feature is built around doing, with community, guidance, and accountability to keep the momentum going.",
     "checks": [
-      "<strong>Post what you're stuck on.</strong> 82 members have shared a work in progress, and the thread is where most builds actually start.",
-      "<strong>Ship it live with the group.</strong> 47 hackathons, workshops, and office hours since October 2025.",
-      "<strong>Then post the win.</strong> 42 members have shared a finished tool, most of them with the code."
+      "<strong>Support when you're stuck.</strong> 82 members have shared a work in progress, and the thread is where most builds actually start.",
+      "<strong>Demo it live.</strong> 47 hackathons, workshops, and office hours since October 2025.",
+      "<strong>Share the win.</strong> 42 members have shared a finished tool, most of them with the code."
     ],
     "photo": "/10x-ai-assistant-workshop.webp",
     "photoAlt": "Build a 10x Marketing AI Assistant in Google Sheets, a live Orange Labs workshop",
@@ -164,7 +164,7 @@
       { "name": "Jenna Kobryn", "photo": "/jenna-kobryn.webp", "built": "Client-ready HTML SEO reports built with Claude, replacing a bloated tool stack" },
       { "name": "Alex Adekola", "photo": "/alex-adekola.webp", "built": "A tool that converts PDF insurance estimates back into editable industry-standard files" },
       { "name": "Thomas Hefke", "photo": "/thomas-hefke.webp", "built": "Turned 50,997 unstructured hotel guest notes into searchable fields" },
-      { "name": "Ryan Shelley", "photo": "/ryan-shelley.webp", "built": "Trained a model on 2,872 pages to predict Google rankings" },
+      { "name": "Aishwarya Lohi", "photo": "/aishwarya-lohi.jpeg", "built": "Automated monthly SEO reports that merge Screaming Frog, GSC, GA4, and Ahrefs into one brief" },
       { "name": "Natasha Post", "photo": "/natasha-post.webp", "built": "A pSEO rank tracker built with Claude, GSC, and Colab" },
       { "name": "Martin Canchola", "photo": "/martin-avatar.webp", "built": "An AI co-pilot that grades client calls in real time. Built in 7 hours" },
       { "name": "Niki Mosier", "photo": "/niki-mosier.webp", "built": "Turned three years of SEO deliverables into a product she sells" },

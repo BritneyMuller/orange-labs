@@ -1,0 +1,44 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Frontmatter {
+  title: string;
+  description: string;
+  date: string;
+  sourceUrl: string;
+  sourceLabel: string;
+  author?: string;
+  eyebrow?: string;
+}
+
+const { frontmatter } = Astro.props as { frontmatter: Frontmatter };
+const { title, description, date, sourceUrl, sourceLabel, author, eyebrow } = frontmatter;
+
+const formattedDate = new Date(date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={`${title} | Orange Labs`} description={description} canonicalUrl={sourceUrl}>
+  <header class="hero dotgrid" style="padding-bottom: 3rem">
+    <div class="wrap" style="max-width: 46rem">
+      <a class="btn btn-ghost" href="/blog" style="margin-bottom: 1.5rem">&larr; All posts</a>
+      {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+      <h1 style="font-size: clamp(2rem, 4.4vw, 2.9rem)">{title}</h1>
+      <p class="lede" style="margin-top: 1rem">{description}</p>
+      <p class="article-meta">
+        {formattedDate} &middot; Originally published{author && ` by ${author}`} on <a href={sourceUrl} target="_blank" rel="noopener">{sourceLabel}</a>
+      </p>
+    </div>
+  </header>
+
+  <section class="on-light">
+    <div class="wrap" style="max-width: 46rem">
+      <div class="article-body">
+        <slot />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

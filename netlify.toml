@@ -8,3 +8,9 @@
 [[edge_functions]]
   path = "/*"
   function = "noindex-netlify-subdomain"
+
+[[redirects]]
+  from = "/ai-watermarking"
+  to = "/watermarking"
+  status = 301
+  force = true
