@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WatermarkLab from '../components/watermark/WatermarkLab.tsx';
+import WordExplainer from '../components/watermark/WordExplainer.tsx';
 import site from '../data/site.json';
 import wm from '../data/watermarking.json';
 
@@ -29,7 +30,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={wm.meta.title} description={wm.meta.description}>
+<BaseLayout title={wm.meta.title} description={wm.meta.description} hideFooterNewsletter>
   <Fragment slot="head">
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:image:width" content="1200" />
@@ -57,7 +58,7 @@ const articleSchema = {
     <div class="wrap">
       <div class="centerhead">
         <div class="eyebrow">{wm.sixtySecond.eyebrow}</div>
-        <h2 style="font-size: 1.8rem">{wm.sixtySecond.heading}</h2>
+        <h2 class="nowrap-heading" style="font-size: 1.8rem">{wm.sixtySecond.heading}</h2>
       </div>
       <ol class="sixty">
         {
@@ -82,6 +83,14 @@ const articleSchema = {
   <section id="simulator" class="midnight">
     <div class="wrap">
       <div class="centerhead">
+        <div class="eyebrow">{wm.explainer.eyebrow}</div>
+        <h2>{wm.explainer.heading}</h2>
+        <p class="lede" style="margin: 1.2rem auto 0">{wm.explainer.intro}</p>
+      </div>
+
+      <WordExplainer client:visible sentence={wm.explainer.sentence} demoKey={wm.explainer.key} payoff={wm.explainer.payoff} />
+
+      <div class="centerhead" style="margin-top: 4rem">
         <div class="eyebrow">{wm.simulator.eyebrow}</div>
         <h2>{wm.simulator.heading}</h2>
         <p class="lede" style="margin: 1.2rem auto 0">{wm.simulator.intro}</p>
@@ -101,12 +110,6 @@ const articleSchema = {
         wrongKeyNote={wm.detector.wrongKeyNote}
       />
 
-      <div class="centerhead" style="margin-top: 4rem">
-        <div class="eyebrow">{wm.detector.eyebrow}</div>
-        <h3 style="font-size: 1.6rem; text-transform: uppercase; font-family: var(--display); font-weight: 700">{wm.detector.heading}</h3>
-        <p class="lede" style="margin: 1.2rem auto 0">{wm.detector.intro}</p>
-      </div>
-
       <div class="centerhead" style="margin-top: 4rem; margin-bottom: 1.5rem">
         <div class="eyebrow">{wm.stressTest.eyebrow}</div>
         <h3 style="font-size: 1.6rem; text-transform: uppercase; font-family: var(--display); font-weight: 700">{wm.stressTest.heading}</h3>
@@ -119,7 +122,18 @@ const articleSchema = {
     <div class="wrap" style="max-width: 46rem">
       <h3 style="font-size: 1.4rem; margin-bottom: 1.2rem">{wm.stressTest.meaning.heading}</h3>
       <ul class="checks">
-        {wm.stressTest.meaning.items.map((item) => <li>{item}</li>)}
+        {
+          wm.stressTest.meaning.items.map((item) => (
+            <li>
+              {item.text}
+              {item.citeHref && (
+                <a class="citelink" href={item.citeHref} target="_blank" rel="noopener">
+                  {item.citeLabel}
+                </a>
+              )}
+            </li>
+          ))
+        }
       </ul>
     </div>
   </section>
@@ -166,6 +180,34 @@ const articleSchema = {
     </div>
   </section>
 
+  <section class="on-light">
+    <div class="wrap">
+      <div class="funfact">
+        <img class="funfact-img" src={wm.funFact.image} alt={wm.funFact.imageAlt} width="640" height="853" loading="lazy" />
+        <div class="funfact-body">
+          <div class="eyebrow">{wm.funFact.eyebrow}</div>
+          <h3>{wm.funFact.heading}</h3>
+          <p>
+            {wm.funFact.body}
+            {wm.funFact.citeHref && (
+              <a class="citelink" href={wm.funFact.citeHref} target="_blank" rel="noopener">
+                {wm.funFact.citeLabel}
+              </a>
+            )}
+          </p>
+          <p class="funfact-caption">
+            {wm.funFact.imageCaption}
+            {wm.funFact.imageSourceHref && (
+              <a class="citelink" href={wm.funFact.imageSourceHref} target="_blank" rel="noopener">
+                {wm.funFact.imageSourceLabel}
+              </a>
+            )}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="midnight">
     <div class="wrap">
       <div class="centerhead">
@@ -197,22 +239,27 @@ const articleSchema = {
 
   <section class="on-light">
     <div class="wrap">
-      <div class="ctapair">
-        <div class="ctacard ctacard-primary" data-cta="newsletter-watermarking">
+      <div class="pillcta pillcta-primary" data-cta="newsletter-watermarking">
+        <div class="pillcta-text">
           <div class="eyebrow">{wm.newsletter.eyebrow}</div>
           <h3>{wm.newsletter.heading}</h3>
           <p>{wm.newsletter.sub}</p>
+        </div>
+        <div class="pillcta-action">
           <div class="newsletter" data-is-popup="false" data-circle-form-uid={wm.newsletter.formUid}></div>
           <p class="consent">{wm.newsletter.consent}</p>
         </div>
-        <div class="ctacard ctacard-secondary" data-cta="join-lab-watermarking">
+      </div>
+
+      <div class="pillcta pillcta-secondary" data-cta="join-lab-watermarking">
+        <div class="pillcta-text">
           <div class="eyebrow">{wm.joinLab.eyebrow}</div>
           <h3>{wm.joinLab.heading}</h3>
           <p>{wm.joinLab.sub}</p>
-          <a class="btn btn-ember" href={wm.joinLab.href} target="_blank" rel="noopener" data-cta="join-lab-watermarking-button">
-            {wm.joinLab.cta} →
-          </a>
         </div>
+        <a class="btn btn-ember" href={wm.joinLab.href} target="_blank" rel="noopener" data-cta="join-lab-watermarking-button">
+          {wm.joinLab.cta} →
+        </a>
       </div>
     </div>
   </section>

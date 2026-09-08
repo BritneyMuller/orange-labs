@@ -12,9 +12,11 @@ import site from '../data/site.json';
 interface Props {
   title: string;
   description: string;
+  hideFooterNewsletter?: boolean;
+  canonicalUrl?: string;
 }
-const { title, description } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const { title, description, hideFooterNewsletter = false, canonicalUrl } = Astro.props;
+const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).toString();
 
 const orgSchema = {
   '@context': 'https://schema.org',
@@ -51,7 +53,7 @@ const orgSchema = {
   <body>
     <Nav />
     <slot />
-    <Footer />
+    <Footer hideNewsletter={hideFooterNewsletter} />
     <script>
       import '../scripts/motion.js';
       import '../scripts/member-count.js';

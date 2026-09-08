@@ -5,8 +5,34 @@
   },
   "eyebrow": "From the Lab",
   "heading": "Field notes & experiments",
-  "intro": "A mix of Substack essays and hands-on interactive pages built for this community.",
+  "intro": "A mix of articles and hands-on interactive pages built for (and by) this community.",
   "substackFeedUrl": "https://britneymuller.substack.com/feed",
   "substackUrl": "https://britneymuller.substack.com",
-  "customPosts": []
+  "customPosts": [
+    {
+      "title": "How AI Text Watermarking Works (Interactive Demo)",
+      "excerpt": "Claude now watermarks its text using Google DeepMind's SynthID-Text. Run the same tournament sampling mechanism yourself, word by word, and see how detection actually works.",
+      "date": "2026-09-08",
+      "href": "/watermarking",
+      "badge": "Interactive",
+      "image": "/watermarking-page.jpg",
+      "imageAlt": "Orange Labs interactive demo: how AI text watermarking works, word by word"
+    },
+    {
+      "title": "What Are Large Language Models (LLMs)? [Part 1]",
+      "excerpt": "Unlock the mysteries of LLMs like ChatGPT without any tech jargon! Dive into our easy-to-understand guide and lay the foundation for grasping these powerful AI language tools.",
+      "date": "2023-08-10",
+      "href": "/blog/what-are-llms-part-1",
+      "image": "/blog/llm-101-part-1/4e5b996e11.webp",
+      "imageAlt": "A massive pile of books in a warehouse, representing the scale of text LLMs are trained on"
+    },
+    {
+      "title": "What Are Large Language Models (LLMs)? [Part 2: Technical Aspects]",
+      "excerpt": "Learn about the technical aspects of LLMs and Transformer Architecture in Part 2 of our comprehensive guide. Explore the nuances of training datasets; their curation, ethical considerations, and their keystone role in language models.",
+      "date": "2023-11-08",
+      "href": "/blog/what-are-llms-part-2",
+      "image": "/blog/llm-101-part-2/54182ff7cc.webp",
+      "imageAlt": "Abstract visualization of training data"
+    }
+  ]
 }
