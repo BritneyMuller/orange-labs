@@ -1,0 +1,336 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../data/site.json';
+import page from '../data/minneapolis-ai-training.json';
+
+const ogImageUrl = new URL(page.meta.ogImage, site.url).toString();
+const canonical = 'https://orangelabs.co/minneapolis-ai-training';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: page.faq.items.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'In-Person AI Training',
+  provider: { '@type': 'Organization', name: site.name, url: site.url },
+  areaServed: ['Minneapolis, MN', 'St. Paul, MN', 'Twin Cities metro'],
+  description: page.meta.description,
+};
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Britney Muller',
+  jobTitle: 'Founder, Orange Labs',
+  sameAs: ['https://maven.com/britney-muller/actionable-ai-for-marketers'],
+};
+---
+
+<BaseLayout title={page.meta.title} description={page.meta.description} canonicalUrl={canonical} hideFooterNewsletter>
+  <Fragment slot="head">
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={page.meta.ogImageAlt} />
+    <meta name="twitter:title" content={page.meta.title} />
+    <meta name="twitter:description" content={page.meta.description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <header class="hero dotgrid">
+    <div class="orb"></div>
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">In-Person · Twin Cities Team Training</div>
+        <h1>{page.hero.h1}</h1>
+        <p class="lede" style="margin: 1.4rem 0 2rem">{page.hero.sub}</p>
+        <div class="heroctas">
+          <div>
+            <a class="btn btn-ember" href={page.hero.cta.href} target="_blank" rel="noopener">{page.hero.cta.label}</a>
+            <p class="ctanote">{page.hero.ctaNote}</p>
+          </div>
+        </div>
+      </div>
+      <div class="bench">
+        <div class="photo ticks">
+          <img src={page.hero.photo} alt={page.hero.photoAlt} loading="eager" width="640" height="480" />
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="statrow mn-proof">
+        {
+          page.hero.proof.map((item) => (
+            <div class="statitem">
+              <div class="statnum">{item.stat}</div>
+              <p>{item.label}</p>
+              {item.source && <p class="mn-proof-source">{item.source}</p>}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </header>
+
+  <section class="dotgrid">
+    <div class="wrap">
+      <div class="centerhead">
+        <div class="eyebrow">{page.benefits.eyebrow}</div>
+        <h2>{page.benefits.heading}</h2>
+      </div>
+      <div class="cards5">
+        {
+          page.benefits.items.map((item, i) => (
+            <div class="fcard" style={`--i:${i}`}>
+              <span class="num">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="on-light">
+    <div class="wrap" style="max-width: 44rem">
+      <div class="eyebrow">{page.local.eyebrow}</div>
+      <h2>{page.local.heading}</h2>
+      <p class="lede" style="margin-top: 1.2rem">{page.local.paragraph1}</p>
+      <p class="lede" style="margin-top: 1.2rem">{page.local.paragraph2}</p>
+      <p class="mn-clients">
+        <strong>{page.local.clientsLabel}</strong> {page.local.clients.join(', ')}
+      </p>
+      <p class="lede" style="margin-top: 1rem">{page.local.bookingLeadTime}</p>
+    </div>
+  </section>
+
+  <section class="midnight">
+    <div class="wrap">
+      <div class="centerhead">
+        <div class="eyebrow">{page.curriculum.eyebrow}</div>
+        <h2>{page.curriculum.heading}</h2>
+        <p class="lede" style="margin: 1.2rem auto 0">{page.curriculum.intro}</p>
+      </div>
+      <div class="mn-curriculum">
+        {
+          page.curriculum.groups.map((group) => (
+            <div class="pcard">
+              <h3>{group.title}</h3>
+              <ul class="checks">
+                {group.items.map((item) => <li>{item}</li>)}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="on-light">
+    <div class="wrap" style="max-width: 48rem">
+      <div class="centerhead">
+        <div class="eyebrow">{page.included.eyebrow}</div>
+        <h2>{page.included.heading}</h2>
+      </div>
+      <div class="mn-table-wrap">
+        <table class="mn-table">
+          <thead>
+            <tr><th>What you get</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            {
+              page.included.rows.map((row) => (
+                <tr>
+                  <td>{row.item}</td>
+                  <td>{row.detail}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p class="lede" style="margin-top: 1.6rem"><strong>Not included:</strong> {page.included.notIncluded}</p>
+    </div>
+  </section>
+
+  <section class="dotgrid">
+    <div class="wrap" style="max-width: 40rem; text-align: center">
+      <div class="centerhead">
+        <div class="eyebrow">{page.certification.eyebrow}</div>
+        <h2>{page.certification.heading}</h2>
+      </div>
+      <p class="lede" style="margin: 0 auto 1rem">{page.certification.body1}</p>
+      <p class="lede" style="margin: 0 auto">{page.certification.body2}</p>
+    </div>
+  </section>
+
+  <section class="on-light">
+    <div class="wrap" style="max-width: 44rem">
+      <div class="eyebrow">{page.trainer.eyebrow}</div>
+      <h2>{page.trainer.heading}</h2>
+      <ul class="checks" style="margin-top: 1.4rem">
+        {page.trainer.credits.map((c) => <li>{c}</li>)}
+      </ul>
+      <p class="lede" style="margin-top: 1.2rem">{page.trainer.whyItMatters}</p>
+      <a class="btn btn-ghost" style="margin-top: 1rem" href={page.trainer.linkedinHref} target="_blank" rel="noopener">
+        {page.trainer.linkedinLabel}
+      </a>
+    </div>
+  </section>
+
+  <section class="midnight">
+    <div class="wrap" style="max-width: 40rem">
+      <div class="centerhead">
+        <div class="eyebrow">{page.details.eyebrow}</div>
+        <h2>{page.details.heading}</h2>
+      </div>
+      <div class="mn-table-wrap">
+        <table class="mn-table">
+          <tbody>
+            {
+              page.details.rows.map((row) => (
+                <tr>
+                  <td><strong>{row.label}</strong></td>
+                  <td>{row.value}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="book-a-call" class="on-light">
+    <div class="wrap" style="max-width: 36rem; text-align: center">
+      <div class="centerhead">
+        <div class="eyebrow">{page.booking.eyebrow}</div>
+        <h2>{page.booking.heading}</h2>
+        <p class="lede" style="margin: 1.2rem auto 0">{page.booking.sub}</p>
+      </div>
+      <a class="btn btn-ember" href={page.booking.cta.href} target="_blank" rel="noopener">
+        {page.booking.cta.label}
+      </a>
+    </div>
+  </section>
+
+  <section class="on-light">
+    <div class="wrap" style="max-width: 40rem">
+      <div class="centerhead" style="margin-bottom: 0">
+        <div class="eyebrow">{page.notForYou.eyebrow}</div>
+      </div>
+      <ul class="checks">
+        {page.notForYou.items.map((item) => <li set:html={item} />)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="midnight">
+    <div class="wrap">
+      <div class="centerhead">
+        <div class="eyebrow">{page.faq.eyebrow}</div>
+        <h2>{page.faq.heading}</h2>
+      </div>
+      <div class="faq">
+        {
+          page.faq.items.map((item, i) => (
+            <details>
+              <summary>
+                <span class="qn">Q.0{i + 1}</span>
+                {item.q}
+              </summary>
+              <p>{item.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="wrap">
+      <h2>{page.closing.heading}</h2>
+      <div>
+        <a class="btn btn-iron" href={page.closing.cta.href} target="_blank" rel="noopener">{page.closing.cta.label}</a>
+        <p class="ctanote">{page.closing.note}</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .mn-proof {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(249, 249, 248, 0.12);
+  }
+  .mn-proof-source {
+    margin: 0.3rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--haze);
+    opacity: 0.8;
+  }
+  .mn-curriculum {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  @media (max-width: 900px) {
+    .mn-curriculum { grid-template-columns: 1fr; }
+  }
+  .mn-clients {
+    margin-top: 1.4rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: #5b5e63;
+  }
+  .mn-table-wrap {
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid rgba(249, 249, 248, 0.12);
+  }
+  .on-light .mn-table-wrap {
+    border-color: rgba(43, 46, 51, 0.14);
+  }
+  .mn-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  .mn-table th,
+  .mn-table td {
+    text-align: left;
+    padding: 0.9em 1.2em;
+    border-bottom: 1px solid rgba(249, 249, 248, 0.1);
+    vertical-align: top;
+  }
+  .on-light .mn-table th,
+  .on-light .mn-table td {
+    border-bottom-color: rgba(43, 46, 51, 0.1);
+  }
+  .mn-table thead th {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ember);
+  }
+  .mn-table tr:last-child td {
+    border-bottom: none;
+  }
+
+</style>
+
