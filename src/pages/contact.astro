@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../data/site.json';
+
+const meta = {
+  title: 'Contact | Orange Labs',
+  description: 'Get in touch with Orange Labs. Send a message and we’ll get back to you.',
+};
+---
+
+<BaseLayout title={meta.title} description={meta.description} hideFooterNewsletter>
+  <header class="hero dotgrid">
+    <div class="orb"></div>
+    <div class="wrap" style="grid-template-columns: 1fr; max-width: 46rem; margin: 0 auto; text-align: center">
+      <div>
+        <div class="eyebrow" style="justify-content: center">Get in touch</div>
+        <h1>Contact Us</h1>
+        <p class="lede" style="margin: 1.4rem auto 0; max-width: 36em">
+          Questions, feedback, partnership ideas? Send a note below and we'll get back to you.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <section class="on-light">
+    <div class="wrap" style="max-width: 40rem">
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        id="contact-form"
+        class="contact-form"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="subject" value="OL CONTACT:" />
+        <p class="hp" hidden>
+          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-ember" style="width: 100%; justify-content: center">
+          Send Message
+        </button>
+
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-form {
+    display: grid;
+    gap: 1.4rem;
+  }
+  .field {
+    display: grid;
+    gap: 0.5rem;
+  }
+  .field label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5b5e63;
+  }
+  .field input,
+  .field textarea {
+    font-family: var(--body);
+    font-size: 1rem;
+    color: var(--iron);
+    background: var(--sandstone-card);
+    border: 1px solid rgba(43, 46, 51, 0.18);
+    border-radius: 10px;
+    padding: 0.85em 1em;
+    resize: vertical;
+    transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  }
+  .field input:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--ember);
+    box-shadow: 0 0 0 3px rgba(241, 87, 34, 0.15);
+  }
+  .form-status {
+    margin: 0;
+    min-height: 1.4em;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .form-status[data-state='ok'] {
+    color: #1a7a3c;
+  }
+  .form-status[data-state='err'] {
+    color: #c8461a;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('form-status');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    status?.removeAttribute('data-state');
+    if (status) status.textContent = 'Sending...';
+
+    fetch('/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error(String(res.status));
+        form.reset();
+        if (status) {
+          status.textContent = "Thanks — that's sent. We'll get back to you soon.";
+          status.setAttribute('data-state', 'ok');
+        }
+      })
+      .catch(() => {
+        if (status) {
+          status.textContent = 'Something went wrong. Please email hello@orangelabs.co directly.';
+          status.setAttribute('data-state', 'err');
+        }
+      });
+  });
+</script>

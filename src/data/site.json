@@ -35,7 +35,7 @@
           { "label": "Blog", "href": "/blog" },
           { "label": "Pricing", "href": "/#pricing" },
           { "label": "Join the Lab", "href": "https://community.orangelabs.co/checkout/member" },
-          { "label": "Contact", "href": "mailto:hello@orangelabs.co" }
+          { "label": "Contact", "href": "/contact" }
         ]
       }
     ]
