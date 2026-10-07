@@ -9,7 +9,8 @@
   "nav": [
     { "label": "Community", "href": "https://community.orangelabs.co" },
     { "label": "Blog", "href": "/blog" },
-    { "label": "Pricing", "href": "/#pricing" }
+    { "label": "Pricing", "href": "/#pricing" },
+    { "label": "Team Training", "href": "/minneapolis-ai-training" }
   ],
   "ticker": [
     "Exp.048 · spun up",
@@ -35,6 +36,7 @@
           { "label": "Blog", "href": "/blog" },
           { "label": "Pricing", "href": "/#pricing" },
           { "label": "Join the Lab", "href": "https://community.orangelabs.co/checkout/member" },
+          { "label": "Team Training", "href": "/minneapolis-ai-training" },
           { "label": "Contact", "href": "/contact" }
         ]
       }

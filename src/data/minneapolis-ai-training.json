@@ -1,0 +1,203 @@
+{
+  "meta": {
+    "title": "In-Person AI Training in Minneapolis | Orange Labs",
+    "description": "Hands-on, in-person AI training for Twin Cities teams. Bring real work, leave with working AI workflows. Led by Britney Muller, former Hugging Face.",
+    "ogImage": "/minneapolis-ai-team-training.jpeg",
+    "ogImageAlt": "Britney Muller teaching an in-person AI workshop in Minneapolis"
+  },
+  "hero": {
+    "h1": "Minneapolis AI Training That Ends With Working Tools, Not Notes",
+    "sub": "In-person, hands-on workshops for Twin Cities teams who already use AI and need it to do real work. Your team brings its actual tasks and walks out with workflows it uses the next morning.",
+    "cta": { "label": "Get your team's AI training plan", "href": "https://calendar.app.google/4keaRmKhy2xzeoNx7" },
+    "ctaNote": "Free 20-minute call · Thursdays and Fridays",
+    "photo": "/minneapolis-ai-team-training.jpeg",
+    "photoAlt": "Britney Muller teaching an in-person AI workshop in Minneapolis",
+    "proof": [
+      { "stat": "4.8/5", "label": "from 78 reviews", "source": "Actionable AI for Marketers course" },
+      { "stat": "800+", "label": "marketers trained", "source": "Actionable AI for Marketers course" },
+      { "stat": "Former", "label": "Hugging Face and Moz" }
+    ]
+  },
+  "benefits": {
+    "eyebrow": "What your team gets",
+    "heading": "What your team actually gets out of AI training",
+    "items": [
+      {
+        "title": "Real work in, working workflows out",
+        "body": "Your team builds on its own tasks in the room, not generic demos. One past student built an AI co-pilot that grades sales calls in real time, in a few hours."
+      },
+      {
+        "title": "Hours back on the repetitive stuff",
+        "body": "Reports, briefs, summaries and first drafts get handed to AI workflows your team set up themselves, so they know how to fix them."
+      },
+      {
+        "title": "Fewer expensive AI mistakes",
+        "body": "Handing a team AI without training is like handing them a chainsaw without the manual. Your team learns what AI is good at, where it fails, and what data never goes in."
+      },
+      {
+        "title": "AI output that still sounds like you",
+        "body": "Your team learns to keep its own voice and judgment, instead of shipping copy that reads like everyone else's."
+      },
+      {
+        "title": "Skills that show",
+        "body": "Every participant gets a certificate of completion they can add to LinkedIn."
+      }
+    ]
+  },
+  "local": {
+    "eyebrow": "Built in Minneapolis",
+    "heading": "Built in Minneapolis, for Minneapolis businesses",
+    "paragraph1": "Orange Labs is Minnesota-based, and this top rated AI team training happens in person, in your city. Britney comes to your office anywhere in the Twin Cities metro, or books a space for you, like WeWork or BrightSpot.",
+    "paragraph2": "This isn't a remote vendor with a Minneapolis landing page. Britney has hosted Orange Labs' Minneapolis AI meetup at WeWork, and the person who teaches your team is the person you meet on the first call.",
+    "clientsLabel": "Teams Britney has trained or advised:",
+    "clients": ["Amazon", "MNSearch", "Emergent Staffing"],
+    "bookingLeadTime": "Most teams book 3-5 weeks out."
+  },
+  "curriculum": {
+    "eyebrow": "What's covered",
+    "heading": "What the AI training covers",
+    "intro": "Every session is tailored from a short survey your team fills out first. Topics are drawn from the Actionable AI for Marketers curriculum, grouped by what you're deciding on:",
+    "groups": [
+      {
+        "title": "Getting the foundations right",
+        "items": [
+          "How AI actually works, in plain language: so your team stops guessing why outputs go wrong",
+          "What AI is good and bad at: so time goes to tasks it can actually do",
+          "Safe data habits: so nothing sensitive ends up in the wrong tool"
+        ]
+      },
+      {
+        "title": "Getting time back",
+        "items": [
+          "Content creation lab: drafts, briefs and repurposing that keep your voice",
+          "Reusable prompt templates for your team's recurring tasks",
+          "Automating recurring reports and summaries"
+        ]
+      },
+      {
+        "title": "Building things that last",
+        "items": [
+          "Connecting AI to your own data and documents",
+          "Scheduled AI workflows that run without anyone pressing a button",
+          "Evaluating AI tools so you pick ones that drive value & outlast the hype"
+        ]
+      }
+    ]
+  },
+  "included": {
+    "eyebrow": "What's included",
+    "heading": "Exactly what's included",
+    "rows": [
+      { "item": "Pre-training team survey", "detail": "Britney learns what your team does before designing the session" },
+      { "item": "Live, in-person training", "detail": "Led by Britney at your office or a reserved Twin Cities space" },
+      { "item": "Hands-on build time", "detail": "Each person works on a real task from their own job" },
+      { "item": "Ready-to-use templates and workflows", "detail": "Prompts and workflows built for your team's tasks, yours to keep" },
+      { "item": "Certificate of completion", "detail": "LinkedIn-shareable, for every participant" },
+      { "item": "Follow-up support", "detail": "[Confirm: follow-up session, office hours, or Orange Labs seats]" }
+    ],
+    "notIncluded": "We don't build the tools for your team. Your team builds them, so they can keep improving today's workflows and building new ones long after the training ends."
+  },
+  "certification": {
+    "eyebrow": "Certification",
+    "heading": "Every participant leaves with a certificate",
+    "body1": "Every participant earns an Actionable AI certificate of completion for hands-on AI implementation. It's built to be shared on LinkedIn, so the skill is visible to your team's network and future employers.",
+    "body2": "The certificate matters less than what's behind it: each person leaves having built something that works on their real job."
+  },
+  "trainer": {
+    "eyebrow": "Who trains your team",
+    "heading": "Britney Muller leads every session herself",
+    "credits": [
+      "12+ years in machine learning and generative AI",
+      "Led the launch of BLOOM at Hugging Face, the largest open-source multilingual LLM at the time, covered by The Washington Post, The New York Times and 60 Minutes",
+      "Former Senior SEO Scientist at Moz, where she rewrote the Beginner's Guide to SEO",
+      "AI consultant to Amazon, building custom in-house AI workflows and training teams on AI foundations",
+      "Creator of Actionable AI for Marketers, rated 4.8/5 across 78 reviews, with 800+ students",
+      "International keynote speaker on making AI useful, not theoretical"
+    ],
+    "whyItMatters": "Why it matters for your team: she's built the workflows she teaches, and she explains them in plain business language.",
+    "linkedinHref": "#",
+    "linkedinLabel": "Connect with Britney on LinkedIn"
+  },
+  "details": {
+    "eyebrow": "At a glance",
+    "heading": "Training details at a glance",
+    "rows": [
+      { "label": "Format", "value": "In-person, hands-on" },
+      { "label": "Group size", "value": "One team up to 200 people" },
+      { "label": "Where", "value": "Your office, or a reserved space (WeWork, BrightSpot) anywhere in the Twin Cities metro" },
+      { "label": "Length", "value": "Half-day, full-day, or 2-day" },
+      { "label": "Price", "value": "Starting at $20,000" },
+      { "label": "Prerequisites", "value": "None. No coding or technical background" },
+      { "label": "Bring", "value": "A laptop and one real task you want to speed up" },
+      { "label": "Certificate", "value": "Yes, for every participant" },
+      { "label": "Next step", "value": "Free 20-minute call" }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "heading": "Minneapolis AI training FAQ",
+    "items": [
+      {
+        "q": "How much does in-person AI training cost?",
+        "a": "Training starts at $20,000 for a half-day session. Price depends on group size and length. A free 20-minute call gets you an exact quote for your team."
+      },
+      {
+        "q": "How many people can you train at once?",
+        "a": "Up to 200 in a single session. For hands-on build time, larger groups split into smaller working groups so everyone gets help."
+      },
+      {
+        "q": "Does this work for non-technical teams?",
+        "a": "Yes! No coding or technical background is needed. If your team can write a Google Sheets formula, they can build with AI."
+      },
+      {
+        "q": "Our team already uses ChatGPT. Will this be too basic?",
+        "a": "No. Using ChatGPT is prompting. This training covers what you build around it: connecting AI to your data, putting it on a schedule, and making it something the whole team can use. The pre-training survey sets the starting level."
+      },
+      {
+        "q": "Do you come to our office?",
+        "a": "Yes, anywhere in the Twin Cities metro. Prefer neutral ground? Training can also run at a reserved space like WeWork or BrightSpot."
+      },
+      {
+        "q": "We're not in the Twin Cities — can you still train us?",
+        "a": "Minneapolis is home base, and that's where most training happens. For the right fit, Britney travels to other cities too — ask on your call."
+      },
+      {
+        "q": "Do participants get a certificate?",
+        "a": "Yes. Every participant gets a certificate of completion they can share on LinkedIn."
+      },
+      {
+        "q": "How is this different from the Actionable AI for Marketers course?",
+        "a": "The course is a 5-week online cohort on Maven for individuals. In-person training is built around your team's own tasks, delivered in one room, on your schedule."
+      },
+      {
+        "q": "Can you train teams outside marketing?",
+        "a": "Yes. Britney has helped customer service, sales, ops and many other teams build AI workflows tailored to their own work."
+      },
+      {
+        "q": "How do we get started?",
+        "a": "Book a free 20-minute call this coming Thursday or Friday. You'll leave the call knowing the format, price and next available dates."
+      }
+    ]
+  },
+  "notForYou": {
+    "eyebrow": "Not quite what you need?",
+    "heading": "Not quite what you need?",
+    "items": [
+      "<strong>Training just yourself?</strong> <a href=\"https://maven.com/britney-muller/actionable-ai-for-marketers\" target=\"_blank\" rel=\"noopener\">Actionable AI for Marketers</a> is the 5-week online cohort.",
+      "<strong>Want ongoing support after training?</strong> <a href=\"https://community.orangelabs.co\">The Orange Labs community</a> is where people keep building, $49/mo.",
+      "<strong>Need a keynote for an event?</strong> See <a href=\"https://britneymuller.com\" target=\"_blank\" rel=\"noopener\">speaking at britneymuller.com</a>.",
+      "<strong>Still researching?</strong> <a href=\"/blog\">The Orange Labs blog</a> has free AI workflows to try first."
+    ]
+  },
+  "closing": {
+    "heading": "Your team already knows AI matters. Let's make it useful.",
+    "cta": { "label": "Get your team's AI training plan", "href": "https://calendar.app.google/4keaRmKhy2xzeoNx7" },
+    "note": "Free 20-minute call · Thursdays and Fridays"
+  },
+  "booking": {
+    "eyebrow": "Get started",
+    "heading": "Get your team's AI training plan",
+    "sub": "Pick a time that works, Thursdays and Fridays. You'll leave the call knowing the format, price and next available dates.",
+    "cta": { "label": "Book your free 20-minute call", "href": "https://calendar.app.google/4keaRmKhy2xzeoNx7" }
+  }
+}
