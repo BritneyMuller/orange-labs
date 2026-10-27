@@ -14,3 +14,9 @@
   to = "/watermarking"
   status = 301
   force = true
+
+# Crawlers and tools often guess /sitemap.xml; point it at Astro's index.
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301

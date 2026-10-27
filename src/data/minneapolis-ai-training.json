@@ -93,7 +93,7 @@
       { "item": "Hands-on build time", "detail": "Each person works on a real task from their own job" },
       { "item": "Ready-to-use templates and workflows", "detail": "Prompts and workflows built for your team's tasks, yours to keep" },
       { "item": "Certificate of completion", "detail": "LinkedIn-shareable, for every participant" },
-      { "item": "Follow-up support", "detail": "[Confirm: follow-up session, office hours, or Orange Labs seats]" }
+      { "item": "Follow-up support", "detail": "follow-up session, office hours or Orange Labs seats" }
     ],
     "notIncluded": "We don't build the tools for your team. Your team builds them, so they can keep improving today's workflows and building new ones long after the training ends."
   },
@@ -115,7 +115,7 @@
       "International keynote speaker on making AI useful, not theoretical"
     ],
     "whyItMatters": "Why it matters for your team: she's built the workflows she teaches, and she explains them in plain business language.",
-    "linkedinHref": "#",
+    "linkedinHref": "https://www.linkedin.com/in/britneymuller/",
     "linkedinLabel": "Connect with Britney on LinkedIn"
   },
   "details": {

@@ -16,7 +16,9 @@ interface Props {
   canonicalUrl?: string;
 }
 const { title, description, hideFooterNewsletter = false, canonicalUrl } = Astro.props;
-const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).toString();
+// build.format 'file' puts .html in the pathname; canonicals use the clean URL.
+const cleanPath = Astro.url.pathname.replace(/(\/index)?\.html$/, '') || '/';
+const canonical = canonicalUrl ?? new URL(cleanPath, Astro.site).toString();
 
 const orgSchema = {
   '@context': 'https://schema.org',
